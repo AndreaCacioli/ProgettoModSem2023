@@ -377,6 +377,23 @@
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#CDProjektRED
+:CDProjektRED rdf:type owl:NamedIndividual ,
+                       :Studio .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Cyberpunk
+:Cyberpunk rdf:type owl:NamedIndividual ,
+                    :Story_Game ;
+           :hasDLC :PhantomLiberty ;
+           :madeBy :CDProjektRED .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#PhantomLiberty
+:PhantomLiberty rdf:type owl:NamedIndividual ,
+                         :DLC .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RaidenCard
 :RaidenCard rdf:type owl:NamedIndividual ,
                      :Card ;
@@ -396,6 +413,14 @@
                        :Card ;
               :isAssetOf :Genshin ;
               :represents :Traveler .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#V
+:V rdf:type owl:NamedIndividual ,
+            :Character ;
+   :appearsIn :Cyberpunk ;
+   :isProtagonistOf :Cyberpunk ;
+   :class "Human" .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome
