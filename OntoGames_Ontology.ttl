@@ -164,14 +164,32 @@
        rdfs:domain :Character ;
        rdfs:range [ rdf:type rdfs:Datatype ;
                     owl:oneOf [ rdf:type rdf:List ;
-                                rdf:first "Dwarf" ;
+                                rdf:first "Demigod" ;
                                 rdf:rest [ rdf:type rdf:List ;
-                                           rdf:first "Elf" ;
+                                           rdf:first "Dragon" ;
                                            rdf:rest [ rdf:type rdf:List ;
-                                                      rdf:first "Human" ;
+                                                      rdf:first "Dwarf" ;
                                                       rdf:rest [ rdf:type rdf:List ;
-                                                                 rdf:first "Robot" ;
-                                                                 rdf:rest rdf:nil
+                                                                 rdf:first "Elf" ;
+                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                            rdf:first "Fairy" ;
+                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                       rdf:first "God" ;
+                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                  rdf:first "Human" ;
+                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                             rdf:first "Mutant" ;
+                                                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                                                        rdf:first "Ogre" ;
+                                                                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                   rdf:first "Robot" ;
+                                                                                                                                   rdf:rest rdf:nil
+                                                                                                                                 ]
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
                                                                ]
                                                     ]
                                          ]
