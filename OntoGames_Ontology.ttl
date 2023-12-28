@@ -15,13 +15,6 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#isLovedBy
-:isLovedBy rdf:type owl:ObjectProperty ;
-           owl:inverseOf :loves ;
-           rdfs:domain :Character ;
-           rdfs:range :Lover .
-
-
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn
 :appearsIn rdf:type owl:ObjectProperty ;
            rdfs:domain :Character ;
@@ -82,13 +75,20 @@
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isAssetOf
 :isAssetOf rdf:type owl:ObjectProperty ;
            rdfs:domain :Asset ;
-           rdfs:range :Competitive_Game .
+           rdfs:range :Game .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isLovedBy
+:isLovedBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :loves ;
+           rdfs:domain :Character ;
+           rdfs:range :Lover .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isMapOf
 :isMapOf rdf:type owl:ObjectProperty ;
          rdfs:domain :Map ;
-         rdfs:range :Competitive_Game .
+         rdfs:range :Game .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf
@@ -141,6 +141,12 @@
 :represents rdf:type owl:ObjectProperty ;
             rdfs:domain :Card ;
             rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/usesWeapon
+:usesWeapon rdf:type owl:ObjectProperty ;
+            rdfs:domain :Character ;
+            rdfs:range :Weapon .
 
 
 #################################################################
@@ -353,19 +359,50 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Aquadome
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RaidenCard
+:RaidenCard rdf:type owl:NamedIndividual ,
+                     :Card ;
+            :isAssetOf :Genshin ;
+            :represents :Raiden .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#SignoraCard
+:SignoraCard rdf:type owl:NamedIndividual ,
+                      :Card ;
+             :isAssetOf :Genshin ;
+             :represents :Signora .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#TravelerCard
+:TravelerCard rdf:type owl:NamedIndividual ,
+                       :Card ;
+              :isAssetOf :Genshin ;
+              :represents :Traveler .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome
 :Aquadome rdf:type owl:NamedIndividual ,
                    :Map ;
           :isMapOf :RocketLeague .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Dominus
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Dominus
 :Dominus rdf:type owl:NamedIndividual ,
                   :Car ;
          :isAssetOf :RocketLeague .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Giulia
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female
+:Female rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin
+:Genshin rdf:type owl:NamedIndividual ,
+                  :Story_Game ;
+         :madeBy :Hoyoverse .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Giulia
 :Giulia rdf:type owl:NamedIndividual ,
                  :Character ;
         :appearsIn :MarthaIsDead ;
@@ -374,30 +411,48 @@
         :hasSex :Female ;
         :isProtagonistOf :MarthaIsDead ;
         :kills :Irene ;
-        :loves :Lapo .
+        :loves :Lapo ;
+        :class "Human" .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Irene
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hoyoverse
+:Hoyoverse rdf:type owl:NamedIndividual ,
+                    :Studio .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Irene
 :Irene rdf:type owl:NamedIndividual ,
                 :Character ;
        :appearsIn :MarthaIsDead ;
-       :hasSex :Female .
+       :hasSex :Female ;
+       :class "Human" .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#LKA
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/KusanagiNoTsurugi
+:KusanagiNoTsurugi rdf:type owl:NamedIndividual ,
+                            :Weapon ;
+                   :isAssetOf :Genshin .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/LKA
 :LKA rdf:type owl:NamedIndividual ,
               :Studio .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Lapo
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lapo
 :Lapo rdf:type owl:NamedIndividual ,
                :Character ;
       :appearsIn :MarthaIsDead ;
       :hasSex :Male ;
-      :loves :Giulia .
+      :loves :Giulia ;
+      :class "Human" .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Martha
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Male
+:Male rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Martha
 :Martha rdf:type owl:NamedIndividual ,
                  :Character ;
         :appearsIn :MarthaIsDead ;
@@ -405,39 +460,55 @@
         :class "Human" .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#MarthaIsDead
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead
 :MarthaIsDead rdf:type owl:NamedIndividual ,
                        :Story_Game ;
               :madeBy :LKA .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Octane
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/NotSpecified
+:NotSpecified rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Octane
 :Octane rdf:type owl:NamedIndividual ,
                  :Car ;
         :isAssetOf :RocketLeague .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Psyonix
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix
 :Psyonix rdf:type owl:NamedIndividual ,
                   :Studio .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RocketLeague
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Raiden
+:Raiden rdf:type owl:NamedIndividual ,
+                 :Character ;
+        :appearsIn :Genshin ;
+        :kills :Signora ;
+        :usesWeapon :KusanagiNoTsurugi ;
+        :class "God" .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague
 :RocketLeague rdf:type owl:NamedIndividual ,
                        :Competitive_Game ;
               :madeBy :Psyonix .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female
-:Female rdf:type owl:NamedIndividual .
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Signora
+:Signora rdf:type owl:NamedIndividual ,
+                  :Villain ;
+         :appearsIn :Genshin ;
+         :class "Human" .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Male
-:Male rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/NotSpecified
-:NotSpecified rdf:type owl:NamedIndividual .
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Traveler
+:Traveler rdf:type owl:NamedIndividual ,
+                   :Character ;
+          :appearsIn :Genshin ;
+          :isProtagonistOf :Genshin ;
+          :class "Human" .
 
 
 #################################################################
