@@ -15,23 +15,11 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#hasProtagonist
-:hasProtagonist rdf:type owl:ObjectProperty ;
-                owl:inverseOf :isProtagonistOf ;
-                rdfs:domain :Game ;
-                rdfs:range :Character .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#hasSex
-:hasSex rdf:type owl:ObjectProperty ;
-        rdfs:domain :Character ;
-        rdfs:range :Gender .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#isProtagonistOf
-:isProtagonistOf rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Character ;
-                 rdfs:range :Game .
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#isLovedBy
+:isLovedBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :loves ;
+           rdfs:domain :Character ;
+           rdfs:range :Lover .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn
@@ -71,12 +59,24 @@
              rdfs:domain :List .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasProtagonist
+:hasProtagonist rdf:type owl:ObjectProperty ;
+                owl:inverseOf :isProtagonistOf ;
+                rdfs:domain :Game ;
+                rdfs:range :Character .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasRelative
 :hasRelative rdf:type owl:ObjectProperty ,
-                      owl:TransitiveProperty ,
-                      owl:ReflexiveProperty ;
+                      owl:SymmetricProperty ;
              rdfs:domain :Character ;
              rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasSex
+:hasSex rdf:type owl:ObjectProperty ;
+        rdfs:domain :Character ;
+        rdfs:range :Gender .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isAssetOf
@@ -89,6 +89,12 @@
 :isMapOf rdf:type owl:ObjectProperty ;
          rdfs:domain :Map ;
          rdfs:range :Competitive_Game .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf
+:isProtagonistOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Character ;
+                 rdfs:range :Game .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/kills
@@ -110,8 +116,7 @@
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy
 :madeBy rdf:type owl:ObjectProperty ;
-        rdfs:domain :Game ,
-                    :Saga ;
+        rdfs:domain :Game ;
         rdfs:range :Studio .
 
 
@@ -142,13 +147,33 @@
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#age
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/age
 :age rdf:type owl:DatatypeProperty ;
      rdfs:domain :Character ;
      rdfs:range xsd:int .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#name
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/class
+:class rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Character ;
+       rdfs:range [ rdf:type rdfs:Datatype ;
+                    owl:oneOf [ rdf:type rdf:List ;
+                                rdf:first "Dwarf" ;
+                                rdf:rest [ rdf:type rdf:List ;
+                                           rdf:first "Elf" ;
+                                           rdf:rest [ rdf:type rdf:List ;
+                                                      rdf:first "Human" ;
+                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                 rdf:first "Robot" ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ]
+                              ]
+                  ] .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/name
 :name rdf:type owl:DatatypeProperty ;
       rdfs:domain :Character ,
                   :DLC ,
@@ -159,62 +184,15 @@
       rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#sex
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sex
 :sex rdf:type owl:DatatypeProperty ;
      rdfs:domain :Character ;
      rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Class
-:Class rdf:type owl:DatatypeProperty ;
-       rdfs:domain :Character ;
-       rdfs:range [ rdf:type rdfs:Datatype ;
-                    owl:oneOf [ rdf:type rdf:List ;
-                                rdf:first "Classe1" ;
-                                rdf:rest [ rdf:type rdf:List ;
-                                           rdf:first "Classe2" ;
-                                           rdf:rest [ rdf:type rdf:List ;
-                                                      rdf:first "Classe3" ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ]
-                              ]
-                  ] .
-
-
 #################################################################
 #    Classes
 #################################################################
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Female_Protagonist_Game
-:Female_Protagonist_Game rdf:type owl:Class ;
-                         owl:equivalentClass [ owl:intersectionOf ( :Story_Game
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :hasProtagonist ;
-                                                                      owl:someValuesFrom [ owl:intersectionOf ( :Character
-                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                  owl:onProperty :hasSex ;
-                                                                                                                  owl:hasValue :Female
-                                                                                                                ]
-                                                                                                              ) ;
-                                                                                           rdf:type owl:Class
-                                                                                         ]
-                                                                    ]
-                                                                  ) ;
-                                               rdf:type owl:Class
-                                             ] ;
-                         rdfs:subClassOf :Story_Game .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Gender
-:Gender rdf:type owl:Class ;
-        owl:equivalentClass [ rdf:type owl:Class ;
-                              owl:oneOf ( :Female
-                                          :Male
-                                          :NotSpecified
-                                        )
-                            ] .
-
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset
 :Asset rdf:type owl:Class .
@@ -243,9 +221,39 @@
 :DLC rdf:type owl:Class .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game
+:Female_Protagonist_Game rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :Story_Game
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasProtagonist ;
+                                                                      owl:someValuesFrom [ owl:intersectionOf ( :Character
+                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                  owl:onProperty :hasSex ;
+                                                                                                                  owl:hasValue :Female
+                                                                                                                ]
+                                                                                                              ) ;
+                                                                                           rdf:type owl:Class
+                                                                                         ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :Story_Game .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game
 :Game rdf:type owl:Class ;
       rdfs:subClassOf :Item .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Gender
+:Gender rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:oneOf ( :Female
+                                          :Male
+                                          :NotSpecified
+                                        )
+                            ] .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Item
@@ -254,6 +262,14 @@
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Killer
 :Killer rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Character
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :kills ;
+                                                     owl:someValuesFrom :Character
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
         rdfs:subClassOf :Character .
 
 
@@ -263,6 +279,14 @@
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lover
 :Lover rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Character
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :loves ;
+                                                    owl:someValuesFrom :Character
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
        rdfs:subClassOf :Character .
 
 
@@ -273,13 +297,12 @@
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Mutual_Lover
 :Mutual_Lover rdf:type owl:Class ;
               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :loves ;
+                                                           owl:onProperty :isLovedBy ;
                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                            owl:onClass :Lover
                                                          ]
                                                          [ rdf:type owl:Restriction ;
-                                                           owl:onProperty [ owl:inverseOf :loves
-                                                                          ] ;
+                                                           owl:onProperty :loves ;
                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                            owl:onClass :Lover
                                                          ]
@@ -291,6 +314,14 @@
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Protagonist
 :Protagonist rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :Character
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :isProtagonistOf ;
+                                                          owl:someValuesFrom :Game
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
              rdfs:subClassOf :Character .
 
 
@@ -322,15 +353,90 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Female
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Aquadome
+:Aquadome rdf:type owl:NamedIndividual ,
+                   :Map ;
+          :isMapOf :RocketLeague .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Dominus
+:Dominus rdf:type owl:NamedIndividual ,
+                  :Car ;
+         :isAssetOf :RocketLeague .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Giulia
+:Giulia rdf:type owl:NamedIndividual ,
+                 :Character ;
+        :appearsIn :MarthaIsDead ;
+        :hasRelative :Irene ,
+                     :Martha ;
+        :hasSex :Female ;
+        :isProtagonistOf :MarthaIsDead ;
+        :kills :Irene ;
+        :loves :Lapo .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Irene
+:Irene rdf:type owl:NamedIndividual ,
+                :Character ;
+       :appearsIn :MarthaIsDead ;
+       :hasSex :Female .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#LKA
+:LKA rdf:type owl:NamedIndividual ,
+              :Studio .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Lapo
+:Lapo rdf:type owl:NamedIndividual ,
+               :Character ;
+      :appearsIn :MarthaIsDead ;
+      :hasSex :Male ;
+      :loves :Giulia .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Martha
+:Martha rdf:type owl:NamedIndividual ,
+                 :Character ;
+        :appearsIn :MarthaIsDead ;
+        :hasSex :Female ;
+        :class "Human" .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#MarthaIsDead
+:MarthaIsDead rdf:type owl:NamedIndividual ,
+                       :Story_Game ;
+              :madeBy :LKA .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Octane
+:Octane rdf:type owl:NamedIndividual ,
+                 :Car ;
+        :isAssetOf :RocketLeague .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Psyonix
+:Psyonix rdf:type owl:NamedIndividual ,
+                  :Studio .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RocketLeague
+:RocketLeague rdf:type owl:NamedIndividual ,
+                       :Competitive_Game ;
+              :madeBy :Psyonix .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female
 :Female rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Male
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Male
 :Male rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#NotSpecified
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/NotSpecified
 :NotSpecified rdf:type owl:NamedIndividual .
 
 
