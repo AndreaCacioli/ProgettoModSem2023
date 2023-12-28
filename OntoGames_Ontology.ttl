@@ -12,13 +12,29 @@
 <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology> rdf:type owl:Ontology .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#equivalentClass
+owl:equivalentClass rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#mutually_loves
+:mutually_loves rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:propertyChainAxiom ( :loves
+                                         :loves
+                                       ) .
+
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn
 :appearsIn rdf:type owl:ObjectProperty ;
            rdfs:domain :Character ;
-           rdfs:range :Game .
+           rdfs:range <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/belongsTo
@@ -35,7 +51,7 @@
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasDLC
 :hasDLC rdf:type owl:ObjectProperty ;
-        rdfs:domain :Game ;
+        rdfs:domain <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
         rdfs:range :DLC .
 
 
@@ -55,7 +71,7 @@
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasProtagonist
 :hasProtagonist rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isProtagonistOf ;
-                rdfs:domain :Game ;
+                rdfs:domain <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
                 rdfs:range :Character .
 
 
@@ -75,7 +91,7 @@
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isAssetOf
 :isAssetOf rdf:type owl:ObjectProperty ;
            rdfs:domain :Asset ;
-           rdfs:range :Game .
+           rdfs:range <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isLovedBy
@@ -88,13 +104,13 @@
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isMapOf
 :isMapOf rdf:type owl:ObjectProperty ;
          rdfs:domain :Map ;
-         rdfs:range :Game .
+         rdfs:range <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf
 :isProtagonistOf rdf:type owl:ObjectProperty ;
                  rdfs:domain :Character ;
-                 rdfs:range :Game .
+                 rdfs:range <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/kills
@@ -116,7 +132,7 @@
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy
 :madeBy rdf:type owl:ObjectProperty ;
-        rdfs:domain :Game ;
+        rdfs:domain <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
         rdfs:range :Studio .
 
 
@@ -128,7 +144,7 @@
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/oneOf
 :oneOf rdf:type owl:ObjectProperty ;
-       rdfs:domain :Game ;
+       rdfs:domain <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
        rdfs:range :Saga .
 
 
@@ -201,10 +217,10 @@
 :name rdf:type owl:DatatypeProperty ;
       rdfs:domain :Character ,
                   :DLC ,
-                  :Game ,
                   :Map ,
                   :Saga ,
-                  :Studio ;
+                  :Studio ,
+                  <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
       rdfs:range xsd:string .
 
 
@@ -217,6 +233,17 @@
 #################################################################
 #    Classes
 #################################################################
+
+###  http://dbpedia.org/ontology/Software
+<http://dbpedia.org/ontology/Software> rdf:type owl:Class ;
+                                       rdfs:subClassOf :Item ;
+                                       rdfs:comment "Superclass of VideoGame" .
+
+
+###  http://schema.org/Product
+<http://schema.org/Product> rdf:type owl:Class ;
+                            rdfs:comment "Represents something that can be sold" .
+
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset
 :Asset rdf:type owl:Class .
@@ -233,16 +260,18 @@
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character
-:Character rdf:type owl:Class .
+:Character rdf:type owl:Class ;
+           rdfs:subClassOf <https://www.wikidata.org/wiki/Q95074> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game
 :Competitive_Game rdf:type owl:Class ;
-                  rdfs:subClassOf :Game .
+                  rdfs:subClassOf <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC
-:DLC rdf:type owl:Class .
+:DLC rdf:type owl:Class ;
+     rdfs:subClassOf <http://schema.org/Product> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game
@@ -263,11 +292,6 @@
                                                rdf:type owl:Class
                                              ] ;
                          rdfs:subClassOf :Story_Game .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game
-:Game rdf:type owl:Class ;
-      rdfs:subClassOf :Item .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Gender
@@ -341,7 +365,7 @@
              owl:equivalentClass [ owl:intersectionOf ( :Character
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty :isProtagonistOf ;
-                                                          owl:someValuesFrom :Game
+                                                          owl:someValuesFrom <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game>
                                                         ]
                                                       ) ;
                                    rdf:type owl:Class
@@ -356,7 +380,7 @@
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game
 :Story_Game rdf:type owl:Class ;
-            rdfs:subClassOf :Game .
+            rdfs:subClassOf <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio
@@ -373,60 +397,37 @@
         rdfs:subClassOf :Asset .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game
+<http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> rdf:type owl:Class ;
+                                                                                                                 rdfs:subClassOf <http://dbpedia.org/ontology/Software> ;
+                                                                                                                 owl:equivalentClass "https://www.wikidata.org/wiki/Q7889" .
+
+
+###  https://www.wikidata.org/wiki/Q95074
+<https://www.wikidata.org/wiki/Q95074> rdf:type owl:Class ;
+                                       rdfs:comment "Represents the context of videogames characters, which are immaginary or not-physical" .
+
+
 #################################################################
 #    Individuals
 #################################################################
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#CDProjektRED
-:CDProjektRED rdf:type owl:NamedIndividual ,
-                       :Studio .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Cyberpunk
-:Cyberpunk rdf:type owl:NamedIndividual ,
-                    :Story_Game ;
-           :hasDLC :PhantomLiberty ;
-           :madeBy :CDProjektRED .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#PhantomLiberty
-:PhantomLiberty rdf:type owl:NamedIndividual ,
-                         :DLC .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RaidenCard
-:RaidenCard rdf:type owl:NamedIndividual ,
-                     :Card ;
-            :isAssetOf :Genshin ;
-            :represents :Raiden .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#SignoraCard
-:SignoraCard rdf:type owl:NamedIndividual ,
-                      :Card ;
-             :isAssetOf :Genshin ;
-             :represents :Signora .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#TravelerCard
-:TravelerCard rdf:type owl:NamedIndividual ,
-                       :Card ;
-              :isAssetOf :Genshin ;
-              :represents :Traveler .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#V
-:V rdf:type owl:NamedIndividual ,
-            :Character ;
-   :appearsIn :Cyberpunk ;
-   :isProtagonistOf :Cyberpunk ;
-   :class "Human" .
-
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome
 :Aquadome rdf:type owl:NamedIndividual ,
                    :Map ;
           :isMapOf :RocketLeague .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED
+:CDProjektRED rdf:type owl:NamedIndividual ,
+                       :Studio .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk
+:Cyberpunk rdf:type owl:NamedIndividual ,
+                    :Story_Game ;
+           :hasDLC :PhantomLiberty ;
+           :madeBy :CDProjektRED .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Dominus
@@ -519,6 +520,11 @@
         :isAssetOf :RocketLeague .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/PhantomLiberty
+:PhantomLiberty rdf:type owl:NamedIndividual ,
+                         :DLC .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix
 :Psyonix rdf:type owl:NamedIndividual ,
                   :Studio .
@@ -531,6 +537,13 @@
         :kills :Signora ;
         :usesWeapon :KusanagiNoTsurugi ;
         :class "God" .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RaidenCard
+:RaidenCard rdf:type owl:NamedIndividual ,
+                     :Card ;
+            :isAssetOf :Genshin ;
+            :represents :Raiden .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague
@@ -546,12 +559,34 @@
          :class "Human" .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SignoraCard
+:SignoraCard rdf:type owl:NamedIndividual ,
+                      :Card ;
+             :isAssetOf :Genshin ;
+             :represents :Signora .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Traveler
 :Traveler rdf:type owl:NamedIndividual ,
                    :Character ;
           :appearsIn :Genshin ;
           :isProtagonistOf :Genshin ;
           :class "Human" .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/TravelerCard
+:TravelerCard rdf:type owl:NamedIndividual ,
+                       :Card ;
+              :isAssetOf :Genshin ;
+              :represents :Traveler .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/V
+:V rdf:type owl:NamedIndividual ,
+            :Character ;
+   :appearsIn :Cyberpunk ;
+   :isProtagonistOf :Cyberpunk ;
+   :class "Human" .
 
 
 #################################################################
