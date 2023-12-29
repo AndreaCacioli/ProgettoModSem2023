@@ -9,7 +9,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/> .
 
-<http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology> rdf:type owl:Ontology .
+<http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology> rdf:type owl:Ontology ;
+                                                                         owl:imports <http://www.ontologydesignpatterns.org/cp/owl/list.owl> ;
+                                                                         rdfs:comment "Ontology focused on videogames' characters interactions" ;
+                                                                         owl:versionInfo 1.0 .
 
 #################################################################
 #    Annotation properties
@@ -23,12 +26,13 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#mutually_loves
-:mutually_loves rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                owl:propertyChainAxiom ( :loves
-                                         :loves
-                                       ) .
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#sagaMadeBy
+:sagaMadeBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Saga ;
+            rdfs:range :Studio ;
+            owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+                                     :madeBy
+                                   ) .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn
@@ -43,29 +47,10 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
            rdfs:range :Character .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/firstItemOf
-:firstItemOf rdf:type owl:ObjectProperty ;
-             owl:inverseOf :hasFirstItem ;
-             rdfs:range :List .
-
-
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasDLC
 :hasDLC rdf:type owl:ObjectProperty ;
         rdfs:domain <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
         rdfs:range :DLC .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasFirstItem
-:hasFirstItem rdf:type owl:ObjectProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :List .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasLastItem
-:hasLastItem rdf:type owl:ObjectProperty ;
-             owl:inverseOf :lastItemOf ;
-             rdf:type owl:FunctionalProperty ;
-             rdfs:domain :List .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasProtagonist
@@ -91,7 +76,10 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isAssetOf
 :isAssetOf rdf:type owl:ObjectProperty ;
            rdfs:domain :Asset ;
-           rdfs:range <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> .
+           rdfs:range <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
+           owl:propertyChainAxiom ( :belongsTo
+                                    :appearsIn
+                                  ) .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isLovedBy
@@ -109,6 +97,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf
 :isProtagonistOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :appearsIn ;
                  rdfs:domain :Character ;
                  rdfs:range <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> .
 
@@ -117,11 +106,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 :kills rdf:type owl:ObjectProperty ;
        rdfs:domain :Killer ;
        rdfs:range :Character .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/lastItemOf
-:lastItemOf rdf:type owl:ObjectProperty ;
-            rdfs:range :List .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/loves
@@ -134,23 +118,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 :madeBy rdf:type owl:ObjectProperty ;
         rdfs:domain <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
         rdfs:range :Studio .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/nextItem
-:nextItem rdf:type owl:ObjectProperty ;
-          owl:inverseOf :previousItem ;
-          rdf:type owl:FunctionalProperty .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/oneOf
-:oneOf rdf:type owl:ObjectProperty ;
-       rdfs:domain <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game> ;
-       rdfs:range :Saga .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/previousItem
-:previousItem rdf:type owl:ObjectProperty ,
-                       owl:FunctionalProperty .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/represents
@@ -236,13 +203,37 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://dbpedia.org/ontology/Software
 <http://dbpedia.org/ontology/Software> rdf:type owl:Class ;
-                                       rdfs:subClassOf :Item ;
+                                       rdfs:subClassOf <http://schema.org/Product> ;
                                        rdfs:comment "Superclass of VideoGame" .
 
 
 ###  http://schema.org/Product
 <http://schema.org/Product> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ;
                             rdfs:comment "Represents something that can be sold" .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#List
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset
@@ -271,7 +262,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC
 :DLC rdf:type owl:Class ;
-     rdfs:subClassOf <http://schema.org/Product> .
+     rdfs:subClassOf <http://dbpedia.org/ontology/Software> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game
@@ -304,10 +295,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                             ] .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Item
-:Item rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Killer
 :Killer rdf:type owl:Class ;
         owl:equivalentClass [ owl:intersectionOf ( :Character
@@ -319,10 +306,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                               rdf:type owl:Class
                             ] ;
         rdfs:subClassOf :Character .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/List
-:List rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lover
@@ -342,24 +325,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 :Map rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Mutual_Lover
-:Mutual_Lover rdf:type owl:Class ;
-              owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isLovedBy ;
-                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass :Lover
-                                                         ]
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :loves ;
-                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass :Lover
-                                                         ]
-                                                       ) ;
-                                    rdf:type owl:Class
-                                  ] ;
-              rdfs:subClassOf :Lover .
-
-
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Protagonist
 :Protagonist rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :Character
@@ -375,7 +340,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga
 :Saga rdf:type owl:Class ;
-      rdfs:subClassOf :List .
+      rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game
