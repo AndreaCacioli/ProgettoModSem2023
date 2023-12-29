@@ -527,14 +527,12 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SignoraCard
 :SignoraCard rdf:type owl:NamedIndividual ,
                       :Card ;
-             :isAssetOf :Genshin ;
              :represents :Signora .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Traveler
 :Traveler rdf:type owl:NamedIndividual ,
                    :Character ;
-          :appearsIn :Genshin ;
           :isProtagonistOf :Genshin ;
           :class "Human" .
 
