@@ -1,0 +1,880 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/"
+     xml:base="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:bag="https://bag2.basisregistraties.overheid.nl/bag/def/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl"/>
+        <rdfs:comment>Ontology focused on videogames&apos; characters interactions</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#equivalentClass -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentClass"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/belongsTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasDLC -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasDLC">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasProtagonist -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasProtagonist">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasRelative -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasRelative">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasSex -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasSex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isAssetOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isAssetOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/belongsTo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isLovedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isLovedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/loves"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lover"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isMapOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isMapOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/kills -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/kills">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Killer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/loves -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/loves">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lover"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/represents -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/represents">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Card"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sagaMadeBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sagaMadeBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/usesWeapon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/usesWeapon">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Weapon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/age">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/class -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/class">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Demigod</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Dragon</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Dwarf</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Elf</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Fairy</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>God</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>Human</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>Mutant</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>Ogre</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first>Robot</rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Software -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Software">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+        <rdfs:comment>Superclass of VideoGame</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Product -->
+
+    <owl:Class rdf:about="http://schema.org/Product">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment>Represents something that can be sold</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#List -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Card -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Card">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character">
+        <rdfs:subClassOf rdf:resource="https://www.wikidata.org/wiki/Q95074"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasProtagonist"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasSex"/>
+                                        <owl:hasValue rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Gender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Gender">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Male"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/NotSpecified"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Killer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Killer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/kills"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lover -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lover">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/loves"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Protagonist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Protagonist">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Villain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Villain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Weapon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Weapon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Game_http://www.wikidata.org/entity/Game">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Software"/>
+        <owl:equivalentClass>https://www.wikidata.org/wiki/Q7889</owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q95074 -->
+
+    <owl:Class rdf:about="https://www.wikidata.org/wiki/Q95074">
+        <rdfs:comment>Represents the context of videogames characters, which are immaginary or not-physical</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
+        <hasDLC rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/PhantomLiberty"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Dominus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Dominus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hoyoverse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Giulia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Giulia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <appearsIn rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead"/>
+        <hasRelative rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Irene"/>
+        <hasRelative rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Martha"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female"/>
+        <isProtagonistOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead"/>
+        <kills rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Irene"/>
+        <loves rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lapo"/>
+        <class>Human</class>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hoyoverse -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hoyoverse">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Irene -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Irene">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <appearsIn rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female"/>
+        <class>Human</class>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/KusanagiNoTsurugi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/KusanagiNoTsurugi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Weapon"/>
+        <isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/LKA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/LKA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lapo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lapo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <appearsIn rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Male"/>
+        <loves rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Giulia"/>
+        <class>Human</class>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Male -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Male"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Martha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Martha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <appearsIn rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female"/>
+        <class>Human</class>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/LKA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/NotSpecified -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/NotSpecified"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Octane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Octane">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/PhantomLiberty -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/PhantomLiberty">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Raiden -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Raiden">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <appearsIn rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin"/>
+        <kills rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Signora"/>
+        <usesWeapon rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/KusanagiNoTsurugi"/>
+        <class>God</class>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RaidenCard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RaidenCard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Card"/>
+        <isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin"/>
+        <represents rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Raiden"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Signora -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Signora">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Villain"/>
+        <appearsIn rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin"/>
+        <class>Human</class>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SignoraCard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SignoraCard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Card"/>
+        <represents rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Signora"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Traveler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Traveler">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <isProtagonistOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin"/>
+        <class>Human</class>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/TravelerCard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/TravelerCard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Card"/>
+        <isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin"/>
+        <represents rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Traveler"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/V -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/V">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Character"/>
+        <appearsIn rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk"/>
+        <isProtagonistOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk"/>
+        <class>Human</class>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Card"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Weapon"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
