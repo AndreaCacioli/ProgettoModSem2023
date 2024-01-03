@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  graphdb:
+    image: ontotext/graphdb:9.11.2-se
+    ports:
+      - 7200:7200
+    volumes:
+      - graphdb-volume:/opt/graphdb/home
+  
+volumes:
+  graphdb-volume:
