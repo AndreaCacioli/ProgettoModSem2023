@@ -26,6 +26,15 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+                                                                                        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem>
+                                                                                      ) ,
+                                                                                      ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+                                                                                        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem>
+                                                                                      ) .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn
 :appearsIn rdf:type owl:ObjectProperty ;
            rdfs:domain :Character ;
@@ -376,6 +385,42 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA20
+:FIFA20 rdf:type owl:NamedIndividual ,
+                 :Competitive_Game ;
+        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA21 .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA21
+:FIFA21 rdf:type owl:NamedIndividual ,
+                 :Competitive_Game ;
+        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA22 .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA22
+:FIFA22 rdf:type owl:NamedIndividual ,
+                 :Competitive_Game ;
+        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA23 .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA23
+:FIFA23 rdf:type owl:NamedIndividual ,
+                 :Competitive_Game ;
+        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA24 .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA24
+:FIFA24 rdf:type owl:NamedIndividual ,
+                 :Competitive_Game .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFASaga
+:FIFASaga rdf:type owl:NamedIndividual ,
+                   :Saga ;
+          <http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem> :FIFA20 ;
+          <http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem> :FIFA24 .
+
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RLSaga
 :RLSaga rdf:type owl:NamedIndividual ,

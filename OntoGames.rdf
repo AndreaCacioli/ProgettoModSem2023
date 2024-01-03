@@ -47,6 +47,21 @@
     
 
 
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn">
@@ -601,6 +616,60 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA20 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA20">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <list:previousItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA21"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA21 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA21">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <list:previousItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA22"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA22 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA22">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <list:previousItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA23"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA23 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA23">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <list:previousItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA24"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA24 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA24">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFASaga -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFASaga">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga"/>
+        <list:hasFirstItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA20"/>
+        <list:hasLastItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#FIFA24"/>
+    </owl:NamedIndividual>
     
 
 
