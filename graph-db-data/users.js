@@ -60,6 +60,16 @@
         "name" : "Query 5",
         "body" : "PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wikibase: <http://wikiba.se/ontology#>\nPREFIX bd: <http://www.bigdata.com/rdf#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nselect ?studioDate where { \n    ?studio a :Studio .\n    ?studio :name ?studioName .\n    filter (lang(?studioName) = \"en\") .\n    filter (str(?studioName) = \"Psyonix\") .\n    SERVICE <https://query.wikidata.org/sparql> {\n        ?studioWD wdt:P31 wd:Q210167 .\n        ?studioWD rdfs:label ?studioWDLabel .\n        filter (lang(?studioWDLabel) = \"en\") .\n        filter( str(?studioName) = str(?studioWDLabel)) .\n        ?studioWD wdt:P571 ?studioDate\n\t}\n} \nlimit 100 ",
         "shared" : false
+      },
+      "Query 6" : {
+        "name" : "Query 6",
+        "body" : "PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>\n\nselect ?protagonist where { \n\t?game a wd:Game .\n    ?game :name ?gameName .\n    filter (str(?gameName) = \"Martha is Dead\") . \n    filter (lang(?gameName) = \"en\") .\n    ?protagonist :isProtagonistOf ?game\n} limit 100 ",
+        "shared" : false
+      },
+      "Query 7" : {
+        "name" : "Query 7",
+        "body" : "PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wikibase: <http://wikiba.se/ontology#>\nPREFIX bd: <http://www.bigdata.com/rdf#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>\n\nselect ?game ?series ?gameWDDate where { \n    ?series a :Saga .\n    ?series :name ?seriesName .\n    ?game a wd:Game .\n    ?saga odp:hasItem ?game .\n    ?game :name ?gameName .\n    filter (lang(?seriesName) = \"en\") .\n    filter (str(?seriesName) = \"The Rocket League Saga\") .\n    #SERVICE <https://query.wikidata.org/sparql> {\n        #Find the game on wikidata\n    #    ?gameWD wdt:P31 wd:Q7889 .\n    #    ?gameWD rdfs:label ?gameWDLabel .\n    #    filter (lang(?gameWDLabel) = \"en\") .\n    #    filter( str(?gameWDLabel) = str(?gameName)) .\n        #Get the game date\n     #   ?gameWD wdt:P577 ?gameWDDate\n\t#}\n} \nlimit 100 ",
+        "shared" : false
       }
     }
   }
