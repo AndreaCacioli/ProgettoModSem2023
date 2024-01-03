@@ -55,6 +55,11 @@
         "name" : "Query 4",
         "body" : "PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>\n\nselect (COUNT(?titles) as ?count) where { \n\t?series a :Saga .\n\t?series :name ?seriesName .\n    filter (lang(?seriesName) = \"en\") .\n    #filter (str(?seriesName) = \"The FIFA Saga\")\n    filter (str(?seriesName) = \"The Rocket League Saga\") .\n    ?series odp:hasItem ?titles\n} \nlimit 100 ",
         "shared" : false
+      },
+      "Query 5" : {
+        "name" : "Query 5",
+        "body" : "PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wikibase: <http://wikiba.se/ontology#>\nPREFIX bd: <http://www.bigdata.com/rdf#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nselect ?studioDate where { \n    ?studio a :Studio .\n    ?studio :name ?studioName .\n    filter (lang(?studioName) = \"en\") .\n    filter (str(?studioName) = \"Psyonix\") .\n    SERVICE <https://query.wikidata.org/sparql> {\n        ?studioWD wdt:P31 wd:Q210167 .\n        ?studioWD rdfs:label ?studioWDLabel .\n        filter (lang(?studioWDLabel) = \"en\") .\n        filter( str(?studioName) = str(?studioWDLabel)) .\n        ?studioWD wdt:P571 ?studioDate\n\t}\n} \nlimit 100 ",
+        "shared" : false
       }
     }
   }
