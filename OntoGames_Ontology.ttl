@@ -26,15 +26,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#sagaMadeBy
-:sagaMadeBy rdf:type owl:ObjectProperty ;
-            rdfs:domain :Saga ;
-            rdfs:range :Studio ;
-            owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
-                                     :madeBy
-                                   ) .
-
-
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn
 :appearsIn rdf:type owl:ObjectProperty ;
            rdfs:domain :Character ;
@@ -124,6 +115,15 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 :represents rdf:type owl:ObjectProperty ;
             rdfs:domain :Card ;
             rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sagaMadeBy
+:sagaMadeBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Saga ;
+            rdfs:range :Studio ;
+            owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+                                     :madeBy
+                                   ) .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/usesWeapon
@@ -377,6 +377,26 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RLSaga
+:RLSaga rdf:type owl:NamedIndividual ,
+                 :Saga ;
+        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem> :SuperSonicAcrobaticRocketPoweredBattleCars ;
+        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem> :RocketRacing .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RocketRacing
+:RocketRacing rdf:type owl:NamedIndividual ,
+                       :Competitive_Game ;
+              :madeBy :Psyonix .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#SuperSonicAcrobaticRocketPoweredBattleCars
+:SuperSonicAcrobaticRocketPoweredBattleCars rdf:type owl:NamedIndividual ,
+                                                     :Competitive_Game ;
+                                            <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :RocketLeague ;
+                                            :madeBy :Psyonix .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome
 :Aquadome rdf:type owl:NamedIndividual ,
                    :Map ;
@@ -514,6 +534,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague
 :RocketLeague rdf:type owl:NamedIndividual ,
                        :Competitive_Game ;
+              <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :RocketRacing ;
               :madeBy :Psyonix .
 
 

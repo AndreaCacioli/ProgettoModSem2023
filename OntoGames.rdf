@@ -8,6 +8,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:list="http://www.ontologydesignpatterns.org/cp/owl/list.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology">
@@ -603,6 +604,35 @@
     
 
 
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RLSaga -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RLSaga">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga"/>
+        <list:hasFirstItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#SuperSonicAcrobaticRocketPoweredBattleCars"/>
+        <list:hasLastItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RocketRacing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RocketRacing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RocketRacing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#SuperSonicAcrobaticRocketPoweredBattleCars -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#SuperSonicAcrobaticRocketPoweredBattleCars">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <list:previousItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome">
@@ -801,6 +831,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague">
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <list:previousItem rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RocketRacing"/>
         <madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix"/>
     </owl:NamedIndividual>
     
