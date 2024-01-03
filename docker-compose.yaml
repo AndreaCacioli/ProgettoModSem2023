@@ -6,7 +6,4 @@ services:
     ports:
       - 7200:7200
     volumes:
-      - graphdb-volume:/opt/graphdb/home
-  
-volumes:
-  graphdb-volume:
+      - ./graph-db-data:/opt/graphdb/data
