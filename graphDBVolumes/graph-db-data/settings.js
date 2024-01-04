@@ -3,18 +3,18 @@
     "current.location" : ""
   },
   "import.local" : {
-    "OntoGames;;https://raw.githubusercontent.com/AndreaCacioli/ProgettoModSem2023/main/OntoGames.rdf" : {
-      "name" : "https://raw.githubusercontent.com/AndreaCacioli/ProgettoModSem2023/main/OntoGames.rdf",
+    "OntoGames;;https://raw.githubusercontent.com/AndreaCacioli/ProgettoModSem2023/main/OntoGames_Ontology_inferred.rdf" : {
+      "name" : "https://raw.githubusercontent.com/AndreaCacioli/ProgettoModSem2023/main/OntoGames_Ontology_inferred.rdf",
       "status" : "DONE",
-      "message" : "Imported successfully in less than a second.",
+      "message" : "Imported successfully in 1s.",
       "context" : "",
       "replaceGraphs" : [ ],
       "baseURI" : null,
       "forceSerial" : false,
       "type" : "url",
       "format" : "",
-      "data" : "https://raw.githubusercontent.com/AndreaCacioli/ProgettoModSem2023/main/OntoGames.rdf",
-      "timestamp" : 1704302113227,
+      "data" : "https://raw.githubusercontent.com/AndreaCacioli/ProgettoModSem2023/main/OntoGames_Ontology_inferred.rdf",
+      "timestamp" : 1704361583677,
       "parserSettings" : {
         "preserveBNodeIds" : false,
         "failOnUnknownDataTypes" : false,
