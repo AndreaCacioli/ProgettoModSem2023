@@ -18,10 +18,6 @@
 #    Annotation properties
 #################################################################
 
-###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
-<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
-
-
 ###  http://www.w3.org/2002/07/owl#equivalentClass
 owl:equivalentClass rdf:type owl:AnnotationProperty .
 
@@ -31,12 +27,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem
-<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
-                                                               rdfs:range [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ;
-                                                               owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
                                                                                         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem>
                                                                                       ) ,
                                                                                       ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
@@ -44,256 +35,76 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                                                       ) .
 
 
-###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent
-<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> rdfs:domain [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                               ] .
-
-
-###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf
-<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> rdfs:domain [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ;
-                                                              rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> .
-
-
-###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf
-<http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf> rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> ;
-                                                                    rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                                ] ;
-                                                                    rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                                                                               <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> .
-
-
-###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem
-<http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem> rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> ;
-                                                                     rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                                                                                 <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
-                                                                     rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                                ] .
-
-
-###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem
-<http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem> rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> ;
-                                                                    rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                                                                                <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
-                                                                    rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                               ] .
-
-
-###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf
-<http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf> rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> ;
-                                                                   rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                               ] ;
-                                                                   rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                                                                              <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> .
-
-
-###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem
-<http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> ;
-                                                                 rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                             ] ;
-                                                                 rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                            ] .
-
-
-###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem
-<http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> ;
-                                                                     rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                                 [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                                 ] ;
-                                                                     rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                                ] .
-
-
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#mutuallyLoves
-:mutuallyLoves rdf:type owl:ObjectProperty ,
-                        owl:SymmetricProperty ;
-               rdfs:domain :Character ;
-               rdfs:range :Character .
-
-
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLCOf
 :DLCOf rdf:type owl:ObjectProperty ;
        owl:inverseOf :hasDLC ;
-       rdfs:domain <http://dbpedia.org/ontology/Software> ,
-                   <http://schema.org/Product> ,
-                   <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                   <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                   <http://www.wikidata.org/entity/Game> ,
-                   [ rdf:type owl:Restriction ;
-                     owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                   ] ;
-       rdfs:range <http://dbpedia.org/ontology/Software> ,
-                  <http://schema.org/Product> ,
-                  <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                  <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                  :DLC ,
-                  [ rdf:type owl:Restriction ;
-                    owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger
-                  ] .
+       rdfs:domain <http://www.wikidata.org/entity/Game> ;
+       rdfs:range :DLC .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn
 :appearsIn rdf:type owl:ObjectProperty ;
            owl:inverseOf :hasCharacter ;
-           rdfs:domain :Character ,
-                       <https://www.wikidata.org/wiki/Q95074> ;
-           rdfs:range <http://dbpedia.org/ontology/Software> ,
-                      <http://schema.org/Product> ,
-                      <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                      <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                      <http://www.wikidata.org/entity/Game> ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                      ] .
+           rdfs:domain :Character ;
+           rdfs:range <http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/belongsTo
 :belongsTo rdf:type owl:ObjectProperty ;
            owl:inverseOf :hasAsset ;
            rdfs:domain :Asset ;
-           rdfs:range :Character ,
-                      <https://www.wikidata.org/wiki/Q95074> .
+           rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasAsset
 :hasAsset rdf:type owl:ObjectProperty ;
-          rdfs:domain :Character ,
-                      <https://www.wikidata.org/wiki/Q95074> ;
+          rdfs:domain :Character ;
           rdfs:range :Asset .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasCharacter
 :hasCharacter rdf:type owl:ObjectProperty ;
-              rdfs:domain <http://dbpedia.org/ontology/Software> ,
-                          <http://schema.org/Product> ,
-                          <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                          <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                          <http://www.wikidata.org/entity/Game> ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ;
-              rdfs:range :Character ,
-                         <https://www.wikidata.org/wiki/Q95074> .
+              rdfs:domain <http://www.wikidata.org/entity/Game> ;
+              rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasDLC
 :hasDLC rdf:type owl:ObjectProperty ;
-        rdfs:domain <http://dbpedia.org/ontology/Software> ,
-                    <http://schema.org/Product> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                    <http://www.wikidata.org/entity/Game> ,
-                    [ rdf:type owl:Restriction ;
-                      owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                    ] ;
-        rdfs:range <http://dbpedia.org/ontology/Software> ,
-                   <http://schema.org/Product> ,
-                   <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                   <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                   :DLC ,
-                   [ rdf:type owl:Restriction ;
-                     owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                   ] .
+        rdfs:domain <http://www.wikidata.org/entity/Game> ;
+        rdfs:range :DLC .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasMap
 :hasMap rdf:type owl:ObjectProperty ;
         owl:inverseOf :isMapOf ;
-        rdfs:domain <http://dbpedia.org/ontology/Software> ,
-                    <http://schema.org/Product> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                    <http://www.wikidata.org/entity/Game> ,
-                    [ rdf:type owl:Restriction ;
-                      owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                    ] ;
+        rdfs:domain <http://www.wikidata.org/entity/Game> ;
         rdfs:range :Map .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasProtagonist
 :hasProtagonist rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isProtagonistOf ;
-                rdfs:domain <http://dbpedia.org/ontology/Software> ,
-                            <http://schema.org/Product> ,
-                            <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                            <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                            <http://www.wikidata.org/entity/Game> ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] ;
-                rdfs:range :Character ,
-                           <https://www.wikidata.org/wiki/Q95074> .
+                rdfs:domain <http://www.wikidata.org/entity/Game> ;
+                rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasRelative
 :hasRelative rdf:type owl:ObjectProperty ,
                       owl:SymmetricProperty ;
-             rdfs:domain :Character ,
-                         <https://www.wikidata.org/wiki/Q95074> ;
-             rdfs:range :Character ,
-                        <https://www.wikidata.org/wiki/Q95074> .
+             rdfs:domain :Character ;
+             rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasSex
 :hasSex rdf:type owl:ObjectProperty ;
-        rdfs:domain :Character ,
-                    <https://www.wikidata.org/wiki/Q95074> ;
-        rdfs:range :Gender ,
-                   [ rdf:type owl:Class ;
-                     owl:oneOf ( :Female
-                                 :Male
-                                 :NotSpecified
-                               )
-                   ] .
+        rdfs:domain :Character ;
+        rdfs:range :Gender .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isAssetOf
 :isAssetOf rdf:type owl:ObjectProperty ;
            rdfs:domain :Asset ;
-           rdfs:range <http://dbpedia.org/ontology/Software> ,
-                      <http://schema.org/Product> ,
-                      <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                      <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                      <http://www.wikidata.org/entity/Game> ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                      ] ;
+           rdfs:range <http://www.wikidata.org/entity/Game> ;
            owl:propertyChainAxiom ( :belongsTo
                                     :appearsIn
                                   ) .
@@ -302,170 +113,72 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isLovedBy
 :isLovedBy rdf:type owl:ObjectProperty ;
            owl:inverseOf :loves ;
-           rdfs:domain :Character ,
-                       <https://www.wikidata.org/wiki/Q95074> ;
-           rdfs:range :Character ,
-                      :Lover ,
-                      <https://www.wikidata.org/wiki/Q95074> ,
-                      [ owl:intersectionOf ( :Character
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty :loves ;
-                                               owl:someValuesFrom :Character
-                                             ]
-                                           ) ;
-                        rdf:type owl:Class
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :loves ;
-                        owl:someValuesFrom :Character
-                      ] .
+           rdfs:domain :Character ;
+           rdfs:range :Lover .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isMapOf
 :isMapOf rdf:type owl:ObjectProperty ;
          rdfs:domain :Map ;
-         rdfs:range <http://dbpedia.org/ontology/Software> ,
-                    <http://schema.org/Product> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                    <http://www.wikidata.org/entity/Game> ,
-                    [ rdf:type owl:Restriction ;
-                      owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                    ] .
+         rdfs:range <http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isProtagonistOf
 :isProtagonistOf rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :appearsIn ;
-                 rdfs:domain :Character ,
-                             <https://www.wikidata.org/wiki/Q95074> ;
-                 rdfs:range <http://dbpedia.org/ontology/Software> ,
-                            <http://schema.org/Product> ,
-                            <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                            <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                            <http://www.wikidata.org/entity/Game> ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] .
+                 rdfs:domain :Character ;
+                 rdfs:range <http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isUsedBy
 :isUsedBy rdf:type owl:ObjectProperty ;
           owl:inverseOf :usesWeapon ;
-          rdfs:domain :Asset ,
-                      :Weapon ;
-          rdfs:range :Character ,
-                     <https://www.wikidata.org/wiki/Q95074> .
+          rdfs:domain :Weapon ;
+          rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/killedBy
 :killedBy rdf:type owl:ObjectProperty ;
           owl:inverseOf :kills ;
-          rdfs:domain :Character ,
-                      <https://www.wikidata.org/wiki/Q95074> ;
-          rdfs:range :Character ,
-                     :Killer ,
-                     <https://www.wikidata.org/wiki/Q95074> ,
-                     [ owl:intersectionOf ( :Character
-                                            [ rdf:type owl:Restriction ;
-                                              owl:onProperty :kills ;
-                                              owl:someValuesFrom :Character
-                                            ]
-                                          ) ;
-                       rdf:type owl:Class
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :kills ;
-                       owl:someValuesFrom :Character
-                     ] .
+          rdfs:domain :Character ;
+          rdfs:range :Killer .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/kills
 :kills rdf:type owl:ObjectProperty ;
-       rdfs:domain :Character ,
-                   :Killer ,
-                   <https://www.wikidata.org/wiki/Q95074> ,
-                   [ owl:intersectionOf ( :Character
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :kills ;
-                                            owl:someValuesFrom :Character
-                                          ]
-                                        ) ;
-                     rdf:type owl:Class
-                   ] ,
-                   [ rdf:type owl:Restriction ;
-                     owl:onProperty :kills ;
-                     owl:someValuesFrom :Character
-                   ] ;
-       rdfs:range :Character ,
-                  <https://www.wikidata.org/wiki/Q95074> .
+       rdfs:domain :Killer ;
+       rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/loves
 :loves rdf:type owl:ObjectProperty ;
-       rdfs:domain :Character ,
-                   :Lover ,
-                   <https://www.wikidata.org/wiki/Q95074> ,
-                   [ owl:intersectionOf ( :Character
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :loves ;
-                                            owl:someValuesFrom :Character
-                                          ]
-                                        ) ;
-                     rdf:type owl:Class
-                   ] ,
-                   [ rdf:type owl:Restriction ;
-                     owl:onProperty :loves ;
-                     owl:someValuesFrom :Character
-                   ] ;
-       rdfs:range :Character ,
-                  <https://www.wikidata.org/wiki/Q95074> .
+       rdfs:domain :Lover ;
+       rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy
 :madeBy rdf:type owl:ObjectProperty ;
         owl:inverseOf :makes ;
-        rdfs:domain <http://dbpedia.org/ontology/Software> ,
-                    <http://schema.org/Product> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                    [ rdf:type owl:Restriction ;
-                      owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                    ] ;
+        rdfs:domain <http://dbpedia.org/ontology/Software> ;
         rdfs:range :Studio .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/makes
 :makes rdf:type owl:ObjectProperty ;
        rdfs:domain :Studio ;
-       rdfs:range <http://dbpedia.org/ontology/Software> ,
-                  <http://schema.org/Product> ,
-                  <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                  <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                  [ rdf:type owl:Restriction ;
-                    owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger
-                  ] .
+       rdfs:range <http://dbpedia.org/ontology/Software> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/represents
 :represents rdf:type owl:ObjectProperty ;
-            rdfs:domain :Asset ,
-                        :Card ;
-            rdfs:range :Character ,
-                       <https://www.wikidata.org/wiki/Q95074> .
+            rdfs:domain :Card ;
+            rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sagaMadeBy
 :sagaMadeBy rdf:type owl:ObjectProperty ;
             owl:inverseOf :studioMakesSaga ;
-            rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
-                        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> ,
-                        :Saga ;
+            rdfs:domain :Saga ;
             rdfs:range :Studio ;
             owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
                                      :madeBy
@@ -475,19 +188,14 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/studioMakesSaga
 :studioMakesSaga rdf:type owl:ObjectProperty ;
                  rdfs:domain :Studio ;
-                 rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                            <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
-                            <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> ,
-                            :Saga .
+                 rdfs:range :Saga .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/usesWeapon
 :usesWeapon rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain :Character ,
-                        <https://www.wikidata.org/wiki/Q95074> ;
-            rdfs:range :Asset ,
-                       :Weapon .
+            rdfs:domain :Character ;
+            rdfs:range :Weapon .
 
 
 #################################################################
@@ -496,16 +204,14 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/age
 :age rdf:type owl:DatatypeProperty ;
-     rdfs:domain :Character ,
-                 <https://www.wikidata.org/wiki/Q95074> ;
+     rdfs:domain :Character ;
      rdfs:range xsd:int ;
      rdfs:comment "The number of years a character has existed for."@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/class
 :class rdf:type owl:DatatypeProperty ;
-       rdfs:domain :Character ,
-                   <https://www.wikidata.org/wiki/Q95074> ;
+       rdfs:domain :Character ;
        rdfs:range [ rdf:type rdfs:Datatype ;
                     owl:oneOf [ rdf:type rdf:List ;
                                 rdf:first "Demigod" ;
@@ -551,8 +257,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sex
 :sex rdf:type owl:DatatypeProperty ;
-     rdfs:domain :Character ,
-                 <https://www.wikidata.org/wiki/Q95074> ;
+     rdfs:domain :Character ;
      rdfs:range xsd:string ;
      rdfs:comment "The gender of a character."@en .
 
@@ -563,20 +268,13 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://dbpedia.org/ontology/Software
 <http://dbpedia.org/ontology/Software> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://schema.org/Product> ,
-                                                       <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                       <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ;
+                                       rdfs:subClassOf <http://schema.org/Product> ;
                                        rdfs:comment "Superclass of VideoGame" .
 
 
 ###  http://schema.org/Product
 <http://schema.org/Product> rdf:type owl:Class ;
-                            rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                            <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                                            [ rdf:type owl:Restriction ;
-                                              owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                                            ] ;
+                            rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ;
                             rdfs:comment "Represents something that can be sold" .
 
 
@@ -595,17 +293,12 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#List
 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                                                                             <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> .
+                                                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> .
 
 
 ###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem
 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                                                 [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                                 ] .
+                                                                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset
@@ -633,17 +326,13 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game
 :Competitive_Game rdf:type owl:Class ;
-                  rdfs:subClassOf <http://dbpedia.org/ontology/Software> ,
-                                  <http://schema.org/Product> ,
-                                  <http://www.wikidata.org/entity/Game> ;
+                  rdfs:subClassOf <http://www.wikidata.org/entity/Game> ;
                   rdfs:comment "A videogame in which players compete to reach a goal."@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC
 :DLC rdf:type owl:Class ;
-     rdfs:subClassOf <http://dbpedia.org/ontology/Software> ,
-                     <http://schema.org/Product> ,
-                     <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ;
+     rdfs:subClassOf <http://dbpedia.org/ontology/Software> ;
      rdfs:comment "Downloadable Content for a videogame. It generally is an expansion to the base version of the Game"@en .
 
 
@@ -664,22 +353,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                                   ) ;
                                                rdf:type owl:Class
                                              ] ;
-                         rdfs:subClassOf :Story_Game ,
-                                         [ owl:intersectionOf ( :Story_Game
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :hasProtagonist ;
-                                                                  owl:someValuesFrom [ owl:intersectionOf ( :Character
-                                                                                                            [ rdf:type owl:Restriction ;
-                                                                                                              owl:onProperty :hasSex ;
-                                                                                                              owl:hasValue :Female
-                                                                                                            ]
-                                                                                                          ) ;
-                                                                                       rdf:type owl:Class
-                                                                                     ]
-                                                                ]
-                                                              ) ;
-                                           rdf:type owl:Class
-                                         ] ;
+                         rdfs:subClassOf :Story_Game ;
                          rdfs:comment "A story game in which the protagonist is of gender: Female"@en .
 
 
@@ -691,12 +365,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                           :NotSpecified
                                         )
                             ] ;
-        rdfs:subClassOf [ rdf:type owl:Class ;
-                          owl:oneOf ( :Female
-                                      :Male
-                                      :NotSpecified
-                                    )
-                        ] ;
         rdfs:comment "The gender of some characters: in the domain of videogames could be something other than male/female" .
 
 
@@ -710,15 +378,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                  ) ;
                               rdf:type owl:Class
                             ] ;
-        rdfs:subClassOf :Character ,
-                        [ owl:intersectionOf ( :Character
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :kills ;
-                                                 owl:someValuesFrom :Character
-                                               ]
-                                             ) ;
-                          rdf:type owl:Class
-                        ] ;
+        rdfs:subClassOf :Character ;
         rdfs:comment "A character that has killed some other character"@en .
 
 
@@ -732,15 +392,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                 ) ;
                              rdf:type owl:Class
                            ] ;
-       rdfs:subClassOf :Character ,
-                       [ owl:intersectionOf ( :Character
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :loves ;
-                                                owl:someValuesFrom :Character
-                                              ]
-                                            ) ;
-                         rdf:type owl:Class
-                       ] ;
+       rdfs:subClassOf :Character ;
        rdfs:comment "A character that is in love with some other character"@en .
 
 
@@ -759,33 +411,21 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                       ) ;
                                    rdf:type owl:Class
                                  ] ;
-             rdfs:subClassOf :Character ,
-                             [ owl:intersectionOf ( :Character
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :isProtagonistOf ;
-                                                      owl:someValuesFrom <http://www.wikidata.org/entity/Game>
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
-                             ] ;
+             rdfs:subClassOf :Character ;
              rdfs:comment """A character that is considered the leader / main character of a game.
 Usually the  one the player plays as."""@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga
 :Saga rdf:type owl:Class ;
-      rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                      <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
-                      <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> ;
+      rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> ;
       rdfs:comment """A list of games that have something in common and have an intrinsic order.
 They might share the universe, the topic, the producer, ..."""@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game
 :Story_Game rdf:type owl:Class ;
-            rdfs:subClassOf <http://dbpedia.org/ontology/Software> ,
-                            <http://schema.org/Product> ,
-                            <http://www.wikidata.org/entity/Game> ;
+            rdfs:subClassOf <http://www.wikidata.org/entity/Game> ;
             rdfs:comment "A game in which one or more players are told a story"@en .
 
 
@@ -796,8 +436,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Villain
 :Villain rdf:type owl:Class ;
-         rdfs:subClassOf :Character ,
-                         <https://www.wikidata.org/wiki/Q95074> ;
+         rdfs:subClassOf :Character ;
          rdfs:comment "The main antagonist of the protagonist." .
 
 
@@ -809,9 +448,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.wikidata.org/entity/Game
 <http://www.wikidata.org/entity/Game> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://dbpedia.org/ontology/Software> ,
-                                                      <http://schema.org/Product> ,
-                                                      <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ;
+                                      rdfs:subClassOf <http://dbpedia.org/ontology/Software> ;
                                       rdfs:comment "Some sort of videogame"@en ;
                                       owl:equivalentClass "https://www.wikidata.org/wiki/Q7889" .
 
@@ -836,28 +473,14 @@ They might share the universe, the topic, the producer, ..."""@en .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED
 :CDProjektRED rdf:type owl:NamedIndividual ,
                        :Studio ;
-              :makes :Cyberpunk ,
-                     :PhantomLiberty ;
               :name "CDProjectRED"@en ,
                     "CDProjectRed"@it .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk
 :Cyberpunk rdf:type owl:NamedIndividual ,
-                    <http://dbpedia.org/ontology/Software> ,
-                    <http://schema.org/Product> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                    <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                    :DLC ,
-                    :Story_Game ,
-                    <http://www.wikidata.org/entity/Game> ,
-                    [ rdf:type owl:Restriction ;
-                      owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                    ] ;
-           :hasCharacter :V ;
+                    :Story_Game ;
            :hasDLC :PhantomLiberty ;
-           :hasProtagonist :V ;
            :madeBy :CDProjektRED ;
            :name "Cyberpunk"@en ,
                  "Cyberpunk"@it .
@@ -865,7 +488,6 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Dominus
 :Dominus rdf:type owl:NamedIndividual ,
-                  :Asset ,
                   :Car ;
          :isAssetOf :RocketLeague ;
          :name "Dominus"@en ,
@@ -875,36 +497,14 @@ They might share the universe, the topic, the producer, ..."""@en .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/EASports
 :EASports rdf:type owl:NamedIndividual ,
                    :Studio ;
-          :makes :FIFA20 ,
-                 :FIFA21 ,
-                 :FIFA22 ,
-                 :FIFA23 ,
-                 :FIFA24 ;
           :name "EA Sports"@en ,
                 "EA Sports"@it .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA20
 :FIFA20 rdf:type owl:NamedIndividual ,
-                 <http://dbpedia.org/ontology/Software> ,
-                 <http://schema.org/Product> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                 :Competitive_Game ,
-                 <http://www.wikidata.org/entity/Game> ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                   owl:cardinality "1"^^xsd:nonNegativeInteger
-                 ] ;
-        <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> :FIFASaga ;
-        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :FIFASaga ;
-        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf> :FIFASaga ;
+                 :Competitive_Game ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA21 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> :FIFA21 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> :FIFA21 ,
-                                                                             :FIFA22 ,
-                                                                             :FIFA23 ,
-                                                                             :FIFA24 ;
         :madeBy :EASports ;
         :name "FIFA 2020"@en ,
               "FIFA 2020"@it .
@@ -912,24 +512,8 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA21
 :FIFA21 rdf:type owl:NamedIndividual ,
-                 <http://dbpedia.org/ontology/Software> ,
-                 <http://schema.org/Product> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                 :Competitive_Game ,
-                 <http://www.wikidata.org/entity/Game> ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                   owl:cardinality "1"^^xsd:nonNegativeInteger
-                 ] ;
-        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> :FIFA20 ;
+                 :Competitive_Game ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA22 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> :FIFA20 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> :FIFA22 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> :FIFA20 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> :FIFA22 ,
-                                                                             :FIFA23 ,
-                                                                             :FIFA24 ;
         :madeBy :EASports ;
         :name "FIFA 2021"@en ,
               "FIFA 2021"@it .
@@ -937,24 +521,8 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA22
 :FIFA22 rdf:type owl:NamedIndividual ,
-                 <http://dbpedia.org/ontology/Software> ,
-                 <http://schema.org/Product> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                 :Competitive_Game ,
-                 <http://www.wikidata.org/entity/Game> ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                   owl:cardinality "1"^^xsd:nonNegativeInteger
-                 ] ;
-        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> :FIFA21 ;
+                 :Competitive_Game ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA23 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> :FIFA21 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> :FIFA23 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> :FIFA20 ,
-                                                                            :FIFA21 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> :FIFA23 ,
-                                                                             :FIFA24 ;
         :madeBy :EASports ;
         :name "FIFA 2022"@en ,
               "FIFA 2022"@it .
@@ -962,24 +530,8 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA23
 :FIFA23 rdf:type owl:NamedIndividual ,
-                 <http://dbpedia.org/ontology/Software> ,
-                 <http://schema.org/Product> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                 :Competitive_Game ,
-                 <http://www.wikidata.org/entity/Game> ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                   owl:cardinality "1"^^xsd:nonNegativeInteger
-                 ] ;
-        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> :FIFA22 ;
+                 :Competitive_Game ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA24 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> :FIFA22 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> :FIFA24 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> :FIFA20 ,
-                                                                            :FIFA21 ,
-                                                                            :FIFA22 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> :FIFA24 ;
         :madeBy :EASports ;
         :name "FIFA 2023"@en ,
               "FIFA 2023"@it .
@@ -987,25 +539,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA24
 :FIFA24 rdf:type owl:NamedIndividual ,
-                 <http://dbpedia.org/ontology/Software> ,
-                 <http://schema.org/Product> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                 :Competitive_Game ,
-                 <http://www.wikidata.org/entity/Game> ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                   owl:cardinality "1"^^xsd:nonNegativeInteger
-                 ] ;
-        <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> :FIFASaga ;
-        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :FIFASaga ;
-        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf> :FIFASaga ;
-        <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> :FIFA23 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> :FIFA23 ;
-        <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> :FIFA20 ,
-                                                                            :FIFA21 ,
-                                                                            :FIFA22 ,
-                                                                            :FIFA23 ;
+                 :Competitive_Game ;
         :madeBy :EASports ;
         :name "FIFA 2024"@en ,
               "FIFA 2024"@it .
@@ -1013,14 +547,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga
 :FIFASaga rdf:type owl:NamedIndividual ,
-                   <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                   <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
-                   <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> ,
                    :Saga ;
-          <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> :FIFA20 ,
-                                                                         :FIFA24 ;
-          <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> :FIFA20 ,
-                                                                                        :FIFA24 ;
           <http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem> :FIFA20 ;
           <http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem> :FIFA24 ;
           :name "La saga di FIFA"@it ,
@@ -1028,32 +555,12 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female
-:Female rdf:type owl:NamedIndividual ,
-                 :Gender ,
-                 [ rdf:type owl:Class ;
-                   owl:oneOf ( :Female
-                               :Male
-                               :NotSpecified
-                             )
-                 ] .
+:Female rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin
 :Genshin rdf:type owl:NamedIndividual ,
-                  <http://dbpedia.org/ontology/Software> ,
-                  <http://schema.org/Product> ,
-                  <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                  <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                  :Story_Game ,
-                  <http://www.wikidata.org/entity/Game> ,
-                  [ rdf:type owl:Restriction ;
-                    owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger
-                  ] ;
-         :hasCharacter :Raiden ,
-                       :Signora ,
-                       :Traveler ;
-         :hasProtagonist :Traveler ;
+                  :Story_Game ;
          :madeBy :Hoyoverse ;
          :name "Genshin Impact"@en ,
                "Genshin Impact"@it .
@@ -1061,43 +568,11 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Giulia
 :Giulia rdf:type owl:NamedIndividual ,
-                 :Character ,
-                 :Killer ,
-                 :Lover ,
-                 <https://www.wikidata.org/wiki/Q95074> ,
-                 [ owl:intersectionOf ( :Character
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty :kills ;
-                                          owl:someValuesFrom :Character
-                                        ]
-                                      ) ;
-                   rdf:type owl:Class
-                 ] ,
-                 [ owl:intersectionOf ( :Character
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty :loves ;
-                                          owl:someValuesFrom :Character
-                                        ]
-                                      ) ;
-                   rdf:type owl:Class
-                 ] ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty :isProtagonistOf ;
-                   owl:someValuesFrom <http://www.wikidata.org/entity/Game>
-                 ] ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty :kills ;
-                   owl:someValuesFrom :Character
-                 ] ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty :loves ;
-                   owl:someValuesFrom :Character
-                 ] ;
+                 :Character ;
         :appearsIn :MarthaIsDead ;
         :hasRelative :Irene ,
                      :Martha ;
         :hasSex :Female ;
-        :isLovedBy :Lapo ;
         :isProtagonistOf :MarthaIsDead ;
         :kills :Irene ;
         :loves :Lapo ;
@@ -1109,19 +584,15 @@ They might share the universe, the topic, the producer, ..."""@en .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hoyoverse
 :Hoyoverse rdf:type owl:NamedIndividual ,
                     :Studio ;
-           :makes :Genshin ;
            :name "Hoyoverse"@en ,
                  "Hoyoverse"@it .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Irene
 :Irene rdf:type owl:NamedIndividual ,
-                :Character ,
-                <https://www.wikidata.org/wiki/Q95074> ;
+                :Character ;
        :appearsIn :MarthaIsDead ;
-       :hasRelative :Giulia ;
        :hasSex :Female ;
-       :killedBy :Giulia ;
        :class "Human" ;
        :name "Irene"@en ,
              "Irene"@it .
@@ -1129,10 +600,8 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/KusanagiNoTsurugi
 :KusanagiNoTsurugi rdf:type owl:NamedIndividual ,
-                            :Asset ,
                             :Weapon ;
                    :isAssetOf :Genshin ;
-                   :isUsedBy :Raiden ;
                    :name "Kusanagi No Tsurugi"@en ,
                          "Kusanagi No Tsurugi"@it .
 
@@ -1140,53 +609,28 @@ They might share the universe, the topic, the producer, ..."""@en .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/LKA
 :LKA rdf:type owl:NamedIndividual ,
               :Studio ;
-     :makes :MarthaIsDead ;
      :name "LKA"@en ,
            "LKA"@it .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lapo
 :Lapo rdf:type owl:NamedIndividual ,
-               :Character ,
-               :Lover ,
-               <https://www.wikidata.org/wiki/Q95074> ,
-               [ owl:intersectionOf ( :Character
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :loves ;
-                                        owl:someValuesFrom :Character
-                                      ]
-                                    ) ;
-                 rdf:type owl:Class
-               ] ,
-               [ rdf:type owl:Restriction ;
-                 owl:onProperty :loves ;
-                 owl:someValuesFrom :Character
-               ] ;
+               :Character ;
       :appearsIn :MarthaIsDead ;
       :hasSex :Male ;
-      :isLovedBy :Giulia ;
       :loves :Giulia ;
       :class "Human" ;
       :name "Lapo"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Male
-:Male rdf:type owl:NamedIndividual ,
-               :Gender ,
-               [ rdf:type owl:Class ;
-                 owl:oneOf ( :Female
-                             :Male
-                             :NotSpecified
-                           )
-               ] .
+:Male rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Martha
 :Martha rdf:type owl:NamedIndividual ,
-                 :Character ,
-                 <https://www.wikidata.org/wiki/Q95074> ;
+                 :Character ;
         :appearsIn :MarthaIsDead ;
-        :hasRelative :Giulia ;
         :hasSex :Female ;
         :class "Human" ;
         :name "Marta"@it ,
@@ -1195,39 +639,17 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead
 :MarthaIsDead rdf:type owl:NamedIndividual ,
-                       <http://dbpedia.org/ontology/Software> ,
-                       <http://schema.org/Product> ,
-                       <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                       <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                       :Story_Game ,
-                       <http://www.wikidata.org/entity/Game> ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                       ] ;
-              :hasCharacter :Giulia ,
-                            :Irene ,
-                            :Lapo ,
-                            :Martha ;
-              :hasProtagonist :Giulia ;
+                       :Story_Game ;
               :madeBy :LKA ;
               :name "Martha is Dead"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/NotSpecified
-:NotSpecified rdf:type owl:NamedIndividual ,
-                       :Gender ,
-                       [ rdf:type owl:Class ;
-                         owl:oneOf ( :Female
-                                     :Male
-                                     :NotSpecified
-                                   )
-                       ] .
+:NotSpecified rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Octane
 :Octane rdf:type owl:NamedIndividual ,
-                 :Asset ,
                  :Car ;
         :isAssetOf :RocketLeague ;
         :name "Octane"@en ,
@@ -1236,17 +658,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/PhantomLiberty
 :PhantomLiberty rdf:type owl:NamedIndividual ,
-                         <http://dbpedia.org/ontology/Software> ,
-                         <http://schema.org/Product> ,
-                         <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                         :DLC ,
-                         <http://www.wikidata.org/entity/Game> ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                           owl:cardinality "1"^^xsd:nonNegativeInteger
-                         ] ;
-                :DLCOf :Cyberpunk ;
+                         :DLC ;
                 :madeBy :CDProjektRED ;
                 :name "Phantom Liberty"@en ,
                       "Phantom Liberty"@it .
@@ -1255,23 +667,13 @@ They might share the universe, the topic, the producer, ..."""@en .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix
 :Psyonix rdf:type owl:NamedIndividual ,
                   :Studio ;
-         :makes :RocketLeague ,
-                :RocketRacing ,
-                :SuperSonicAcrobaticRocketPoweredBattleCars ;
          :name "Psyonix"@en ,
                "Psyonix"@it .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RLSaga
 :RLSaga rdf:type owl:NamedIndividual ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
-                 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> ,
                  :Saga ;
-        <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> :RocketRacing ,
-                                                                       :SuperSonicAcrobaticRocketPoweredBattleCars ;
-        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> :RocketRacing ,
-                                                                                      :SuperSonicAcrobaticRocketPoweredBattleCars ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem> :SuperSonicAcrobaticRocketPoweredBattleCars ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem> :RocketRacing ;
         :name "La saga di Rocket League"@it ,
@@ -1280,21 +682,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Raiden
 :Raiden rdf:type owl:NamedIndividual ,
-                 :Character ,
-                 :Killer ,
-                 <https://www.wikidata.org/wiki/Q95074> ,
-                 [ owl:intersectionOf ( :Character
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty :kills ;
-                                          owl:someValuesFrom :Character
-                                        ]
-                                      ) ;
-                   rdf:type owl:Class
-                 ] ,
-                 [ rdf:type owl:Restriction ;
-                   owl:onProperty :kills ;
-                   owl:someValuesFrom :Character
-                 ] ;
+                 :Character ;
         :appearsIn :Genshin ;
         :kills :Signora ;
         :usesWeapon :KusanagiNoTsurugi ;
@@ -1305,7 +693,6 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RaidenCard
 :RaidenCard rdf:type owl:NamedIndividual ,
-                     :Asset ,
                      :Card ;
             :isAssetOf :Genshin ;
             :represents :Raiden ;
@@ -1315,23 +702,8 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague
 :RocketLeague rdf:type owl:NamedIndividual ,
-                       <http://dbpedia.org/ontology/Software> ,
-                       <http://schema.org/Product> ,
-                       <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                       <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                       :Competitive_Game ,
-                       <http://www.wikidata.org/entity/Game> ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                       ] ;
-              <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> :SuperSonicAcrobaticRocketPoweredBattleCars ;
+                       :Competitive_Game ;
               <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :RocketRacing ;
-              <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> :SuperSonicAcrobaticRocketPoweredBattleCars ;
-              <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> :RocketRacing ;
-              <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> :SuperSonicAcrobaticRocketPoweredBattleCars ;
-              <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> :RocketRacing ;
-              :hasMap :Aquadome ;
               :madeBy :Psyonix ;
               :name "Rocket League"@en ,
                     "Rocket League"@it .
@@ -1339,23 +711,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketRacing
 :RocketRacing rdf:type owl:NamedIndividual ,
-                       <http://dbpedia.org/ontology/Software> ,
-                       <http://schema.org/Product> ,
-                       <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                       <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                       :Competitive_Game ,
-                       <http://www.wikidata.org/entity/Game> ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                       ] ;
-              <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> :RLSaga ;
-              <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :RLSaga ;
-              <http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf> :RLSaga ;
-              <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> :RocketLeague ;
-              <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> :RocketLeague ;
-              <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> :RocketLeague ,
-                                                                                  :SuperSonicAcrobaticRocketPoweredBattleCars ;
+                       :Competitive_Game ;
               :madeBy :Psyonix ;
               :name "Rocket Racing"@en ,
                     "Rocket Racing"@it .
@@ -1363,11 +719,8 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Signora
 :Signora rdf:type owl:NamedIndividual ,
-                  :Character ,
-                  :Villain ,
-                  <https://www.wikidata.org/wiki/Q95074> ;
+                  :Villain ;
          :appearsIn :Genshin ;
-         :killedBy :Raiden ;
          :class "Human" ;
          :name "Signora"@en ,
                "Signora"@it .
@@ -1375,7 +728,6 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SignoraCard
 :SignoraCard rdf:type owl:NamedIndividual ,
-                      :Asset ,
                       :Card ;
              :represents :Signora ;
              :name "Signora"@en ,
@@ -1384,23 +736,8 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SuperSonicAcrobaticRocketPoweredBattleCars
 :SuperSonicAcrobaticRocketPoweredBattleCars rdf:type owl:NamedIndividual ,
-                                                     <http://dbpedia.org/ontology/Software> ,
-                                                     <http://schema.org/Product> ,
-                                                     <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
-                                                     <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> ,
-                                                     :Competitive_Game ,
-                                                     <http://www.wikidata.org/entity/Game> ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
-                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                     ] ;
-                                            <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> :RLSaga ;
-                                            <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :RLSaga ;
-                                            <http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf> :RLSaga ;
+                                                     :Competitive_Game ;
                                             <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :RocketLeague ;
-                                            <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> :RocketLeague ;
-                                            <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> :RocketLeague ,
-                                                                                                                 :RocketRacing ;
                                             :madeBy :Psyonix ;
                                             :name "Supersonic Acrobatic Rocket-Powered Battle-Cars"@en ,
                                                   "Supersonic Acrobatic Rocket-Powered Battle-Cars"@it .
@@ -1408,13 +745,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Traveler
 :Traveler rdf:type owl:NamedIndividual ,
-                   :Character ,
-                   <https://www.wikidata.org/wiki/Q95074> ,
-                   [ rdf:type owl:Restriction ;
-                     owl:onProperty :isProtagonistOf ;
-                     owl:someValuesFrom <http://www.wikidata.org/entity/Game>
-                   ] ;
-          :appearsIn :Genshin ;
+                   :Character ;
           :isProtagonistOf :Genshin ;
           :class "Human" ;
           :name "Traveler"@en ,
@@ -1423,7 +754,6 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/TravelerCard
 :TravelerCard rdf:type owl:NamedIndividual ,
-                       :Asset ,
                        :Card ;
               :isAssetOf :Genshin ;
               :represents :Traveler ;
@@ -1433,12 +763,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/V
 :V rdf:type owl:NamedIndividual ,
-            :Character ,
-            <https://www.wikidata.org/wiki/Q95074> ,
-            [ rdf:type owl:Restriction ;
-              owl:onProperty :isProtagonistOf ;
-              owl:someValuesFrom <http://www.wikidata.org/entity/Game>
-            ] ;
+            :Character ;
    :appearsIn :Cyberpunk ;
    :isProtagonistOf :Cyberpunk ;
    :class "Human" ;
@@ -1450,153 +775,6 @@ They might share the universe, the topic, the producer, ..."""@en .
 #    General axioms
 #################################################################
 
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :isProtagonistOf ;
-                         owl:someValuesFrom <http://www.wikidata.org/entity/Game>
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Character
-] .
-
-
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :isProtagonistOf ;
-                         owl:someValuesFrom <http://www.wikidata.org/entity/Game>
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Protagonist
-] .
-
-
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :kills ;
-                         owl:someValuesFrom :Character
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Character
-] .
-
-
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :kills ;
-                         owl:someValuesFrom :Character
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Killer
-] .
-
-
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :loves ;
-                         owl:someValuesFrom :Character
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Character
-] .
-
-
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :loves ;
-                         owl:someValuesFrom :Character
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Lover
-] .
-
-
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasSex ;
-                         owl:hasValue :Female
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Character
-] .
-
-
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasSex ;
-                         owl:hasValue :Female
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf <https://www.wikidata.org/wiki/Q95074>
-] .
-
-
-[ owl:intersectionOf ( :Character
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasSex ;
-                         owl:hasValue :Female
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                    owl:onProperty :hasSex ;
-                    owl:hasValue :Female
-                  ]
-] .
-
-
-[ owl:intersectionOf ( :Story_Game
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasProtagonist ;
-                         owl:someValuesFrom [ owl:intersectionOf ( :Character
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :hasSex ;
-                                                                     owl:hasValue :Female
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ]
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Female_Protagonist_Game
-] .
-
-
-[ owl:intersectionOf ( :Story_Game
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasProtagonist ;
-                         owl:someValuesFrom [ owl:intersectionOf ( :Character
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :hasSex ;
-                                                                     owl:hasValue :Female
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ]
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf :Story_Game
-] .
-
-
-[ rdf:type owl:Class ;
-  owl:oneOf ( :Female
-              :Male
-              :NotSpecified
-            ) ;
-  rdfs:subClassOf :Gender
-] .
-
-
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Car
                 :Card
@@ -1604,42 +782,5 @@ They might share the universe, the topic, the producer, ..."""@en .
               )
 ] .
 
-
-#################################################################
-#    Rules
-#################################################################
-
-:z rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Two Characters that love each other" ;
-   rdfs:label "Mutual Lovers" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :loves ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :z ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :x
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :loves ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :z
-                                                                ] ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :mutuallyLoves ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :z ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :x
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
