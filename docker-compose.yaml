@@ -6,4 +6,7 @@ services:
     ports:
       - 7200:7200
     volumes:
-      - ./graph-db-data:/opt/graphdb/data
+      - ./graphDBVolumes/graph-db-data:/opt/graphdb/data
+      - ./graphDBVolumes/conf:/opt/graphdb/conf
+      - ./graphDBVolumes/log:/opt/graphdb/log
+      - ./graphDBVolumes/work:/opt/graphdb/work
