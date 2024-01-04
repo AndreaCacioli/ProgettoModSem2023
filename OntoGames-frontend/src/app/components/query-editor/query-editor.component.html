@@ -1,1 +1,10 @@
-<p>query-editor works!</p>
+<form>
+    <mat-form-field>
+        <mat-label>Query</mat-label>
+        <textarea matInput placeholder="Insert Query Here!" formControlName="query"></textarea>
+    </mat-form-field>
+
+    <button mat-button color="primary" (click)="sendQuery()">
+        Send Query
+    </button>
+</form>
