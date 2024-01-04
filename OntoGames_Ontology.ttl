@@ -205,7 +205,8 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/age
 :age rdf:type owl:DatatypeProperty ;
      rdfs:domain :Character ;
-     rdfs:range xsd:int .
+     rdfs:range xsd:int ;
+     rdfs:comment "The number of years a character has existed for."@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/class
@@ -243,19 +244,22 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                     ]
                                          ]
                               ]
-                  ] .
+                  ] ;
+       rdfs:comment "The \"race/species\" that a character belongs to."@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/name
 :name rdf:type owl:DatatypeProperty ;
       rdfs:domain owl:Thing ;
-      rdfs:range rdfs:Literal .
+      rdfs:range rdfs:Literal ;
+      rdfs:comment "The main way something is referred to"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sex
 :sex rdf:type owl:DatatypeProperty ;
      rdfs:domain :Character ;
-     rdfs:range xsd:string .
+     rdfs:range xsd:string ;
+     rdfs:comment "The gender of a character."@en .
 
 
 #################################################################
