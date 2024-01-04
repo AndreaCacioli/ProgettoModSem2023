@@ -7,12 +7,11 @@ services:
       - 7200:7200
     volumes:
       - data:/opt/graphdb/data
-      - conf:/opt/graphdb/conf
+      - ./graphDB-conf:/opt/graphdb/conf
       - log:/opt/graphdb/log
       - work:/opt/graphdb/work
 
 volumes:
   data:
-  conf:
   log:
   work:
