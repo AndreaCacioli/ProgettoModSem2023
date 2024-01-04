@@ -235,16 +235,19 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                                  rdf:rest [ rdf:type rdf:List ;
                                                                             rdf:first "Fairy" ;
                                                                             rdf:rest [ rdf:type rdf:List ;
-                                                                                       rdf:first "God" ;
+                                                                                       rdf:first "Fatui" ;
                                                                                        rdf:rest [ rdf:type rdf:List ;
-                                                                                                  rdf:first "Human" ;
+                                                                                                  rdf:first "God" ;
                                                                                                   rdf:rest [ rdf:type rdf:List ;
-                                                                                                             rdf:first "Mutant" ;
+                                                                                                             rdf:first "Human" ;
                                                                                                              rdf:rest [ rdf:type rdf:List ;
-                                                                                                                        rdf:first "Ogre" ;
+                                                                                                                        rdf:first "Mutant" ;
                                                                                                                         rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                   rdf:first "Robot" ;
-                                                                                                                                   rdf:rest rdf:nil
+                                                                                                                                   rdf:first "Ogre" ;
+                                                                                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                              rdf:first "Robot" ;
+                                                                                                                                              rdf:rest rdf:nil
+                                                                                                                                            ]
                                                                                                                                  ]
                                                                                                                       ]
                                                                                                            ]
@@ -312,9 +315,20 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RPG
-:RPG rdf:type owl:Class ;
-     rdfs:subClassOf :Story_Game .
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Adult
+:Adult rdf:type owl:Class ;
+       rdfs:subClassOf :Character ;
+       owl:disjointWith :Minor .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Card_Game
+:Card_Game rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.wikidata.org/entity/Game> .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#Minor
+:Minor rdf:type owl:Class ;
+       rdfs:subClassOf :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset
@@ -430,6 +444,11 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
              rdfs:subClassOf :Character ;
              rdfs:comment """A character that is considered the leader / main character of a game.
 Usually the  one the player plays as."""@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RPG
+:RPG rdf:type owl:Class ;
+     rdfs:subClassOf :Story_Game .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga
@@ -592,6 +611,7 @@ They might share the universe, the topic, the producer, ..."""@en .
         :isProtagonistOf :MarthaIsDead ;
         :kills :Irene ;
         :loves :Lapo ;
+        :age 22 ;
         :class "Human" ;
         :name "Giulia"@en ,
               "Giulia"@it .
@@ -609,6 +629,7 @@ They might share the universe, the topic, the producer, ..."""@en .
                 :Character ;
        :appearsIn :MarthaIsDead ;
        :hasSex :Female ;
+       :age 53 ;
        :class "Human" ;
        :name "Irene"@en ,
              "Irene"@it .
@@ -635,6 +656,7 @@ They might share the universe, the topic, the producer, ..."""@en .
       :appearsIn :MarthaIsDead ;
       :hasSex :Male ;
       :loves :Giulia ;
+      :age 25 ;
       :class "Human" ;
       :name "Lapo"@en .
 
@@ -648,6 +670,7 @@ They might share the universe, the topic, the producer, ..."""@en .
                  :Character ;
         :appearsIn :MarthaIsDead ;
         :hasSex :Female ;
+        :age 22 ;
         :class "Human" ;
         :name "Marta"@it ,
               "Martha"@en .
@@ -702,6 +725,7 @@ They might share the universe, the topic, the producer, ..."""@en .
         :appearsIn :Genshin ;
         :kills :Signora ;
         :usesWeapon :KusanagiNoTsurugi ;
+        :age 3000 ;
         :class "God" ;
         :name "Raiden Shogun"@en ,
               "Raiden Shogun"@it .
@@ -737,7 +761,8 @@ They might share the universe, the topic, the producer, ..."""@en .
 :Signora rdf:type owl:NamedIndividual ,
                   :Villain ;
          :appearsIn :Genshin ;
-         :class "Human" ;
+         :age 500 ;
+         :class "Fatui" ;
          :name "Signora"@en ,
                "Signora"@it .
 
@@ -763,6 +788,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 :Traveler rdf:type owl:NamedIndividual ,
                    :Character ;
           :isProtagonistOf :Genshin ;
+          :age 16 ;
           :class "Human" ;
           :name "Traveler"@en ,
                 "Viaggiatore"@it .
@@ -782,6 +808,7 @@ They might share the universe, the topic, the producer, ..."""@en .
             :Character ;
    :appearsIn :Cyberpunk ;
    :isProtagonistOf :Cyberpunk ;
+   :age 23 ;
    :class "Human" ;
    :name "V"@en ,
          "V"@it .
@@ -809,9 +836,44 @@ They might share the universe, the topic, the producer, ..."""@en .
 
 :cclass rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
+:cage rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
 :x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 :z rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Represents a game which you can play with cards" ;
+   rdfs:label "Card Game" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.wikidata.org/entity/Game> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :g
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Card ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :c
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :isAssetOf ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :g
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Card_Game ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :g
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "If a Game has not-human character, then is a RPG game" ;
@@ -860,6 +922,84 @@ They might share the universe, the topic, the producer, ..."""@en .
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :RPG ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> :g
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "a character is Adult iff age>18" ;
+   rdfs:label "Adult" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Character ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :c
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :age ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :cage
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :cage ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 18 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Adult ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :c
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "A character is minor iff age < 18" ;
+   rdfs:label "Minor" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Character ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :c
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :age ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :cage
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :cage ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 18 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Minor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :c
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]
