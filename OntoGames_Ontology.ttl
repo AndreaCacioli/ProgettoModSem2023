@@ -39,13 +39,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                                                       ) .
 
 
-###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#mutuallyLoves
-:mutuallyLoves rdf:type owl:ObjectProperty ,
-                        owl:SymmetricProperty ;
-               rdfs:domain :Character ;
-               rdfs:range :Character .
-
-
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLCOf
 :DLCOf rdf:type owl:ObjectProperty ;
        owl:inverseOf :hasDLC ;
@@ -180,6 +173,13 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
        rdfs:range <http://dbpedia.org/ontology/Software> .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/mutuallyLoves
+:mutuallyLoves rdf:type owl:ObjectProperty ,
+                        owl:SymmetricProperty ;
+               rdfs:domain :Character ;
+               rdfs:range :Character .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/represents
 :represents rdf:type owl:ObjectProperty ;
             rdfs:domain :Card ;
@@ -310,6 +310,11 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem
 <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> rdf:type owl:Class ;
                                                                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#RPG
+:RPG rdf:type owl:Class ;
+     rdfs:subClassOf :Story_Game .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset
@@ -798,9 +803,67 @@ They might share the universe, the topic, the producer, ..."""@en .
 #    Rules
 #################################################################
 
+:g rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:c rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:cclass rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
 :x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 :z rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "If a Game has not-human character, then is a RPG game" ;
+   rdfs:label "RPG Game" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.wikidata.org/entity/Game> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :g
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Character ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :c
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :appearsIn ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :g
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :class ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :cclass
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#notEqual> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first :cclass ;
+                                                                                                                                                rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                           rdf:first "Human" ;
+                                                                                                                                                           rdf:rest rdf:nil
+                                                                                                                                                         ]
+                                                                                                                                              ]
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :RPG ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :g
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "Two characters loving each other" ;
