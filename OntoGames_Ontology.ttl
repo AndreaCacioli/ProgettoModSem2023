@@ -35,20 +35,85 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
                                                                                       ) .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#DLCOf
+:DLCOf rdf:type owl:ObjectProperty ;
+       owl:inverseOf :hasDLC ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain <http://www.wikidata.org/entity/Game> ;
+       rdfs:range :DLC .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#hasAsset
+:hasAsset rdf:type owl:ObjectProperty ;
+          owl:inverseOf :belongsTo ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Character ;
+          rdfs:range :Asset .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#hasCharacter
+:hasCharacter rdf:type owl:ObjectProperty ;
+              owl:inverseOf :appearsIn ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain <http://www.wikidata.org/entity/Game> ;
+              rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#hasMap
+:hasMap rdf:type owl:ObjectProperty ;
+        owl:inverseOf :isMapOf ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain <http://www.wikidata.org/entity/Game> ;
+        rdfs:range :Map .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#isUsedBy
+:isUsedBy rdf:type owl:ObjectProperty ;
+          owl:inverseOf :usesWeapon ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Weapon ;
+          rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#killedBy
+:killedBy rdf:type owl:ObjectProperty ;
+          owl:inverseOf :kills ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Character ;
+          rdfs:range :Killer .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#makes
+:makes rdf:type owl:ObjectProperty ;
+       owl:inverseOf :madeBy ;
+       rdfs:domain :Studio ;
+       rdfs:range <http://dbpedia.org/ontology/Software> .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#studioMakesSaga
+:studioMakesSaga rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :sagaMadeBy ;
+                 rdfs:domain :Studio ;
+                 rdfs:range :Saga .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/appearsIn
-:appearsIn rdf:type owl:ObjectProperty ;
+:appearsIn rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Character ;
            rdfs:range <http://www.wikidata.org/entity/Game> .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/belongsTo
-:belongsTo rdf:type owl:ObjectProperty ;
+:belongsTo rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Asset ;
            rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasDLC
-:hasDLC rdf:type owl:ObjectProperty ;
+:hasDLC rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain <http://www.wikidata.org/entity/Game> ;
         rdfs:range :DLC .
 
@@ -56,6 +121,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/hasProtagonist
 :hasProtagonist rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isProtagonistOf ;
+                rdf:type owl:FunctionalProperty ;
                 rdfs:domain <http://www.wikidata.org/entity/Game> ;
                 rdfs:range :Character .
 
@@ -85,12 +151,14 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isLovedBy
 :isLovedBy rdf:type owl:ObjectProperty ;
            owl:inverseOf :loves ;
+           rdf:type owl:FunctionalProperty ;
            rdfs:domain :Character ;
            rdfs:range :Lover .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/isMapOf
-:isMapOf rdf:type owl:ObjectProperty ;
+:isMapOf rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain :Map ;
          rdfs:range <http://www.wikidata.org/entity/Game> .
 
@@ -103,20 +171,23 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/kills
-:kills rdf:type owl:ObjectProperty ;
+:kills rdf:type owl:ObjectProperty ,
+                owl:FunctionalProperty ;
        rdfs:domain :Killer ;
        rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/loves
-:loves rdf:type owl:ObjectProperty ;
+:loves rdf:type owl:ObjectProperty ,
+                owl:FunctionalProperty ;
        rdfs:domain :Lover ;
        rdfs:range :Character .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy
-:madeBy rdf:type owl:ObjectProperty ;
-        rdfs:domain <http://www.wikidata.org/entity/Game> ;
+:madeBy rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain <http://dbpedia.org/ontology/Software> ;
         rdfs:range :Studio .
 
 
@@ -137,6 +208,8 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/usesWeapon
 :usesWeapon rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ;
             rdfs:domain :Character ;
             rdfs:range :Weapon .
 
@@ -192,7 +265,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/name
 :name rdf:type owl:DatatypeProperty ;
       rdfs:domain owl:Thing ;
-      rdfs:range rdf:langString .
+      rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/sex
@@ -401,6 +474,13 @@ They might share the universe, the topic, the producer, ..."""@en .
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#EASports
+:EASports rdf:type owl:NamedIndividual ,
+                   :Studio ;
+          :name "EA Sports"@en ,
+                "EA Sports"@it .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome
 :Aquadome rdf:type owl:NamedIndividual ,
                    :Map ;
@@ -437,6 +517,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 :FIFA20 rdf:type owl:NamedIndividual ,
                  :Competitive_Game ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA21 ;
+        :madeBy :EASports ;
         :name "FIFA 2020"@en ,
               "FIFA 2020"@it .
 
@@ -445,6 +526,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 :FIFA21 rdf:type owl:NamedIndividual ,
                  :Competitive_Game ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA22 ;
+        :madeBy :EASports ;
         :name "FIFA 2021"@en ,
               "FIFA 2021"@it .
 
@@ -453,6 +535,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 :FIFA22 rdf:type owl:NamedIndividual ,
                  :Competitive_Game ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA23 ;
+        :madeBy :EASports ;
         :name "FIFA 2022"@en ,
               "FIFA 2022"@it .
 
@@ -461,6 +544,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 :FIFA23 rdf:type owl:NamedIndividual ,
                  :Competitive_Game ;
         <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :FIFA24 ;
+        :madeBy :EASports ;
         :name "FIFA 2023"@en ,
               "FIFA 2023"@it .
 
@@ -468,6 +552,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA24
 :FIFA24 rdf:type owl:NamedIndividual ,
                  :Competitive_Game ;
+        :madeBy :EASports ;
         :name "FIFA 2024"@en ,
               "FIFA 2024"@it .
 
@@ -586,6 +671,7 @@ They might share the universe, the topic, the producer, ..."""@en .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/PhantomLiberty
 :PhantomLiberty rdf:type owl:NamedIndividual ,
                          :DLC ;
+                :madeBy :CDProjektRED ;
                 :name "Phantom Liberty"@en ,
                       "Phantom Liberty"@it .
 
@@ -665,8 +751,8 @@ They might share the universe, the topic, the producer, ..."""@en .
                                                      :Competitive_Game ;
                                             <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> :RocketLeague ;
                                             :madeBy :Psyonix ;
-                                            :name "Supersonic Acrobatic Rocket Powered Battle Cars"@en ,
-                                                  "Supersonic Acrobatic Rocket Powered Battle Cars"@it .
+                                            :name "Supersonic Acrobatic Rocket-Powered Battle-Cars"@en ,
+                                                  "Supersonic Acrobatic Rocket-Powered Battle-Cars"@it .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Traveler
