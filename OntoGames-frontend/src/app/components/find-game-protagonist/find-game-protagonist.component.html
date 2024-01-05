@@ -1,0 +1,19 @@
+<form [formGroup]="formGroup">
+    <mat-form-field>
+        <mat-label>Game Name</mat-label>
+        <input type="text" matInput formControlName="gameName">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="language" formControlName="gameLang">
+            <mat-option *ngFor="let lang of languages" [value]="lang">
+                {{ lang }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    
+    <button mat-button color="primary" (click)="onClick()">
+        Send Query
+    </button>
+</form>
