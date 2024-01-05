@@ -16,8 +16,8 @@ export class QueryService {
   }
 
   //Query 1
-  public getTitlesInASaga():Observable<any>{
-    const query =`
+  public getTitlesInASaga(): Observable<any> {
+    const query = `
     PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
     PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
@@ -37,8 +37,8 @@ export class QueryService {
   }
 
   //Query 2
-  public getSagaFromTitle(title:any):Observable<any>{
-    const query =`
+  public getSagaFromTitle(title: any): Observable<any> {
+    const query = `
     PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
     PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
@@ -62,8 +62,8 @@ export class QueryService {
   }
 
   //Query 3
-  public getStudioFromTitle(title:any):Observable<any>{
-    const query =`
+  public getStudioFromTitle(title: any): Observable<any> {
+    const query = `
     PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
     PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
@@ -85,8 +85,8 @@ export class QueryService {
     return this.http.post(this.endpoint, body.toString(), { headers: this.httpHeaders })
   }
   //Query 4
-  public getCountTitlesFromSaga(saga:any):Observable<any>{
-    const query =`
+  public getCountTitlesFromSaga(saga: any): Observable<any> {
+    const query = `
     PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
     PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
@@ -102,6 +102,8 @@ export class QueryService {
     console.log(query)
     const body: HttpParams = new HttpParams().set(
       'query', query)
+    return this.http.post(this.endpoint, body.toString(), { headers: this.httpHeaders })
+  }
 
 
   //Query 5
@@ -211,7 +213,7 @@ export class QueryService {
   }
 
   //Query 9
-  getMutualLoversGames():Observable<any> {
+  getMutualLoversGames(): Observable<any> {
     const query =
       `
       PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>

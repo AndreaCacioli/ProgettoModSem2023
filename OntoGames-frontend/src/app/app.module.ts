@@ -26,7 +26,7 @@ import { GamesOfSeriesInChronologicOrderComponent } from './components/games-of-
     HomepageComponent,
     QuerySagaDatoTitoloComponent,
     QueryStudioDatoTitoloComponent,
-    QueryCountGamesInSagaComponent
+    QueryCountGamesInSagaComponent,
     FindStudioDateComponent,
     FindGameProtagonistComponent,
     GamesOfSeriesInChronologicOrderComponent,
