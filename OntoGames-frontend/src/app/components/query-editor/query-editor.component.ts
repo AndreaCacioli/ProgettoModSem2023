@@ -8,8 +8,6 @@ import { QueryService } from '../../services/query-service.service';
 
 @Component({
   selector: 'app-query-editor',
-  standalone: true,
-  imports: [MatFormFieldModule, MatButtonModule, FormsModule, ReactiveFormsModule, MatInputModule, HttpClientModule],
   templateUrl: './query-editor.component.html',
   styleUrl: './query-editor.component.scss'
 })
@@ -22,10 +20,11 @@ export class QueryEditorComponent {
   }
 
 
-  protected async sendQuery() {
-    if(this.queryEditorForm.valid)
-      this.queryService.getQueryResults(this.queryEditorForm.value.query!)
-    else  
+  protected sendQuery() {
+    console.log("ciao");
+    if (this.queryEditorForm.valid)
+      this.queryService.getQueryResults(this.queryEditorForm.value.query!).subscribe(data => console.log(data))
+    else
       alert("Error")
   }
 
