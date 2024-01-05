@@ -9,11 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { FindStudioDateComponent } from './components/find-studio-date/find-studio-date.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QueryEditorComponent
+    QueryEditorComponent,
+    FindStudioDateComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
