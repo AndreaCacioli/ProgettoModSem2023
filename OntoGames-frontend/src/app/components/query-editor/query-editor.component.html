@@ -1,9 +1,10 @@
+<h3>Query Editor</h3>
 <form [formGroup]="queryEditorForm">
     <mat-form-field>
         <textarea matInput placeholder="Insert Query Here!" formControlName="query">
         </textarea>
     </mat-form-field>
-    <button mat-button color="primary" (click)="sendQuery()">
-        Send Query
-    </button>
 </form>
+<button mat-raised-button color="primary" (click)="sendQuery()">
+    Send Query
+</button>
