@@ -10,13 +10,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { FindStudioDateComponent } from './components/find-studio-date/find-studio-date.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { FindGameProtagonistComponent } from './components/find-game-protagonist/find-game-protagonist.component';
+import { GamesOfSeriesInChronologicOrderComponent } from './components/games-of-series-in-chronologic-order/games-of-series-in-chronologic-order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QueryEditorComponent,
-    FindStudioDateComponent
+    FindStudioDateComponent,
+    FindGameProtagonistComponent,
+    GamesOfSeriesInChronologicOrderComponent,
   ],
   imports: [
     BrowserModule,

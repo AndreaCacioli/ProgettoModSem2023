@@ -45,13 +45,13 @@ export class QueryService {
   }
 
   //Query 6
-  public getProtagonistOfSeries(gameName: string, gameNameLang: string) {
+  public getProtagonistOfGame(gameName: string, gameNameLang: string): Observable<any> {
     const query =
       `PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
     PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
 
-    select ?protagonist ?gameName where { 
+    select ?protagonist where { 
       ?game a wd:Game .
       ?game :name ?gameName .
       filter (str(?gameName) = "${gameName}") . 
@@ -64,7 +64,42 @@ export class QueryService {
     return this.http.post(this.endpoint, body.toString(), { headers: this.httpHeaders })
   }
 
-  public getQueryResults(query: string) {
+  //Query 7
+  public getGamesInChronologicOrderOfSeries(seriesName: string, seriesLang: string): Observable<any> {
+    const query =
+      `PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
+      PREFIX wd: <http://www.wikidata.org/entity/>
+      PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
+      PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      
+      select distinct ?game ?gameWDDate where { 
+          ?series a :Saga .
+          ?series :name ?seriesName .
+          filter (lang(?seriesName) = "en") .
+          filter (str(?seriesName) = "The Rocket League Saga") .
+          ?game a wd:Game .
+          ?series odp:hasItem ?game .
+          ?game :name ?gameName .
+          SERVICE <https://query.wikidata.org/sparql> {
+              #Find the game on wikidata
+              ?gameWD wdt:P31 wd:Q7889 .
+              ?gameWD rdfs:label ?gameWDLabel .
+              filter (lang(?gameWDLabel) = "en") .
+              filter( str(?gameWDLabel) = str(?gameName)) .
+              #Get the game date
+              ?gameWD wdt:P577 ?gameWDDate
+          }
+      } 
+      order by ?gameWDDate
+      limit 100
+      `
+    const body: HttpParams = new HttpParams().set(
+      'query', query)
+    return this.http.post(this.endpoint, body.toString(), { headers: this.httpHeaders })
+  }
+
+  public getQueryResults(query: string): Observable<any> {
     const body: HttpParams = new HttpParams().set(
       'query', query)
     return this.http.post(this.endpoint, body.toString(), { headers: this.httpHeaders })
