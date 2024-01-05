@@ -9,11 +9,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { QueryTitoliInSagaComponent } from './components/query-titoli-in-saga/query-titoli-in-saga.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { QuerySagaDatoTitoloComponent } from './components/query-saga-dato-titolo/query-saga-dato-titolo.component';
+import { QueryStudioDatoTitoloComponent } from './components/query-studio-dato-titolo/query-studio-dato-titolo.component';
+import { QueryCountGamesInSagaComponent } from './components/query-count-games-in-saga/query-count-games-in-saga.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QueryEditorComponent
+    QueryEditorComponent,
+    QueryTitoliInSagaComponent,
+    HomepageComponent,
+    QuerySagaDatoTitoloComponent,
+    QueryStudioDatoTitoloComponent,
+    QueryCountGamesInSagaComponent
   ],
   imports: [
     BrowserModule,

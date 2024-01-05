@@ -1,0 +1,8 @@
+<h3>Insert the name of a game, then receive which saga is in</h3>
+<form class="insertion-form" [formGroup]="form">
+    <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
+</form>
+<button mat-raised-button color="primary" (click)="query()">Search</button>
+
