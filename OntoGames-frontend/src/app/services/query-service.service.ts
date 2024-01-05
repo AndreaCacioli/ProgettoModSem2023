@@ -17,7 +17,8 @@ export class QueryService {
 
   //Query 5
   public getStudiosFoundationDate(studioName: string, studioLang: string): Observable<any> {
-    const query = `
+    const query =
+      `
       PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
       PREFIX wd: <http://www.wikidata.org/entity/>
       PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -39,7 +40,7 @@ export class QueryService {
           }
       } 
       limit 100 
-    `
+      `
     const body: HttpParams = new HttpParams().set('query', query)
     return this.http.post(this.endpoint, body.toString(), { headers: this.httpHeaders })
   }
@@ -47,17 +48,19 @@ export class QueryService {
   //Query 6
   public getProtagonistOfGame(gameName: string, gameNameLang: string): Observable<any> {
     const query =
-      `PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
-    PREFIX wd: <http://www.wikidata.org/entity/>
-    PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
+      `
+      PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
+      PREFIX wd: <http://www.wikidata.org/entity/>
+      PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
 
-    select ?protagonist where { 
-      ?game a wd:Game .
-      ?game :name ?gameName .
-      filter (str(?gameName) = "${gameName}") . 
-      filter (lang(?gameName) = "${gameNameLang}") .
-      ?protagonist :isProtagonistOf ?game
-    } limit 100`
+      select ?protagonist where { 
+        ?game a wd:Game .
+        ?game :name ?gameName .
+        filter (str(?gameName) = "${gameName}") . 
+        filter (lang(?gameName) = "${gameNameLang}") .
+        ?protagonist :isProtagonistOf ?game
+      } limit 100
+      `
     const body: HttpParams = new HttpParams().set(
       'query', query)
 
@@ -67,7 +70,8 @@ export class QueryService {
   //Query 7
   public getGamesInChronologicOrderOfSeries(seriesName: string, seriesLang: string): Observable<any> {
     const query =
-      `PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
+      `
+      PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
       PREFIX wd: <http://www.wikidata.org/entity/>
       PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
       PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -92,6 +96,47 @@ export class QueryService {
           }
       } 
       order by ?gameWDDate
+      limit 100
+      `
+    const body: HttpParams = new HttpParams().set(
+      'query', query)
+    return this.http.post(this.endpoint, body.toString(), { headers: this.httpHeaders })
+  }
+
+  //Query 8
+  public getFemaleProtagonistGames(): Observable<any> {
+    const query =
+      `
+      PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
+      PREFIX wd: <http://www.wikidata.org/entity/>
+      PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
+
+      select ?game where {
+        ?game a :Female_Protagonist_Game
+      }
+      limit 100
+    `
+    const body: HttpParams = new HttpParams().set(
+      'query', query)
+    return this.http.post(this.endpoint, body.toString(), { headers: this.httpHeaders })
+  }
+
+  //Query 9
+  getMutualLoversGames():Observable<any> {
+    const query =
+      `
+      PREFIX : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/>
+      PREFIX wd: <http://www.wikidata.org/entity/>
+
+      select DISTINCT ?game where {
+        ?game a wd:Game .
+        ?t a :Character .
+        ?s a :Character .
+        ?t :loves ?s .
+        ?s :loves ?t .
+        ?t :appearsIn ?game .
+        ?s :appearsIn ?game 
+      }
       limit 100
       `
     const body: HttpParams = new HttpParams().set(
