@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QueryEditorComponent } from './components/query-editor/query-editor.component';
@@ -14,6 +13,10 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { QuerySagaDatoTitoloComponent } from './components/query-saga-dato-titolo/query-saga-dato-titolo.component';
 import { QueryStudioDatoTitoloComponent } from './components/query-studio-dato-titolo/query-studio-dato-titolo.component';
 import { QueryCountGamesInSagaComponent } from './components/query-count-games-in-saga/query-count-games-in-saga.component';
+import { FindStudioDateComponent } from './components/find-studio-date/find-studio-date.component';
+import { MatSelectModule } from '@angular/material/select';
+import { FindGameProtagonistComponent } from './components/find-game-protagonist/find-game-protagonist.component';
+import { GamesOfSeriesInChronologicOrderComponent } from './components/games-of-series-in-chronologic-order/games-of-series-in-chronologic-order.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { QueryCountGamesInSagaComponent } from './components/query-count-games-i
     QuerySagaDatoTitoloComponent,
     QueryStudioDatoTitoloComponent,
     QueryCountGamesInSagaComponent
+    FindStudioDateComponent,
+    FindGameProtagonistComponent,
+    GamesOfSeriesInChronologicOrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,8 @@ import { QueryCountGamesInSagaComponent } from './components/query-count-games-i
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

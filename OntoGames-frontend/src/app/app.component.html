@@ -4,4 +4,23 @@
 <button mat-raised-button color="primary"routerLink="query2">Query 2</button>
 <button mat-raised-button color="primary"routerLink="query3">Query 3</button>
 <button mat-raised-button color="primary"routerLink="query4">Query 4</button>
+
+<h4>{{"Query Editor" | titlecase}}</h4>
+<app-query-editor></app-query-editor>
+<h4>{{"find studio settling date" | titlecase}}</h4>
+<app-find-studio-date></app-find-studio-date>
+<h4>{{"find game protagonist" | titlecase}}</h4>
+<app-find-game-protagonist></app-find-game-protagonist>
+<h4>{{"find games of series in chronologic order" | titlecase}}</h4>
+<app-games-of-series-in-chronologic-order></app-games-of-series-in-chronologic-order>
+
+
+<button mat-button color="primary" (click)="getFemaleProtagonistsGames()">
+    Female Protagonist Games!
+</button>
+
+<button mat-button color="primary" (click)="getMutualLoversGames()">
+    Games With Mutual Lovers!
+</button>
+
 <router-outlet></router-outlet>
