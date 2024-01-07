@@ -9,6 +9,7 @@ import { QueryService } from './services/query-service.service';
 export class AppComponent {
   updateHolder($event: any) {
     this.holder = $event;
+    console.log(this.holder);
   }
   protected selected: string = "editor";
   @Input() protected holder: any;

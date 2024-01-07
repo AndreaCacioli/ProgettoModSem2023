@@ -21,6 +21,8 @@ import { FemaleProtagonistGamesComponent } from './components/female-protagonist
 import { MutualLoversGamesComponent } from './components/mutual-lovers-games/mutual-lovers-games.component';
 import { ResultsListerComponent } from './components/results-lister/results-lister.component';
 import { StringifyPipe } from './stringify.pipe';
+import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { StringifyPipe } from './stringify.pipe';
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
+    MatTableModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,5 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ResultsListerComponent {
   @Input() results: any = undefined;
-
+  protected getKeys(o: object): any {
+    return Object.keys(o);
+  }
 }
