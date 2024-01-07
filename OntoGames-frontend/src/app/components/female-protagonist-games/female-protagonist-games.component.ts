@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { QueryService } from '../../services/query-service.service';
 
 @Component({
@@ -8,12 +8,12 @@ import { QueryService } from '../../services/query-service.service';
 })
 export class FemaleProtagonistGamesComponent {
 
+  @Output() onResults = new EventEmitter<any>();
   constructor(private query: QueryService) { }
 
   getFemaleProtagonistsGames() {
     this.query.getFemaleProtagonistGames().subscribe(data => {
-      console.log(data);
-      console.log(data.results.bindings);
+      this.onResults.emit(data.results.bindings);
     });
   }
 }

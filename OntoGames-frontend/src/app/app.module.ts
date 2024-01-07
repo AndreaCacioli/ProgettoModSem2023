@@ -19,6 +19,8 @@ import { FindGameProtagonistComponent } from './components/find-game-protagonist
 import { GamesOfSeriesInChronologicOrderComponent } from './components/games-of-series-in-chronologic-order/games-of-series-in-chronologic-order.component';
 import { FemaleProtagonistGamesComponent } from './components/female-protagonist-games/female-protagonist-games.component';
 import { MutualLoversGamesComponent } from './components/mutual-lovers-games/mutual-lovers-games.component';
+import { ResultsListerComponent } from './components/results-lister/results-lister.component';
+import { StringifyPipe } from './stringify.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { MutualLoversGamesComponent } from './components/mutual-lovers-games/mut
     GamesOfSeriesInChronologicOrderComponent,
     FemaleProtagonistGamesComponent,
     MutualLoversGamesComponent,
+    ResultsListerComponent,
+    StringifyPipe,
   ],
   imports: [
     BrowserModule,

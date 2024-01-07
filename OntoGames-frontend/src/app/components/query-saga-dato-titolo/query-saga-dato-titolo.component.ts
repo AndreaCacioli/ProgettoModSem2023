@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { QueryService } from '../../services/query-service.service';
 
@@ -8,14 +8,15 @@ import { QueryService } from '../../services/query-service.service';
   styleUrl: './query-saga-dato-titolo.component.scss'
 })
 export class QuerySagaDatoTitoloComponent {
+  @Output() onResults = new EventEmitter()
   form = new FormGroup({
-		title: new FormControl(''),
+    title: new FormControl(''),
   })
 
-  constructor(private queryService:QueryService){}
-  public query(){
-    this.queryService.getSagaFromTitle(this.form.value.title).subscribe((data: any)=>{
-      console.log(data)
+  constructor(private queryService: QueryService) { }
+  public query() {
+    this.queryService.getSagaFromTitle(this.form.value.title).subscribe((data: any) => {
+      this.onResults.emit(data.results.bindings)
     })
   }
 }

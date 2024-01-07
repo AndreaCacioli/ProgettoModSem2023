@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { QueryService } from '../../services/query-service.service';
 import { Constants } from '../../Constants/Constants';
@@ -9,6 +9,7 @@ import { Constants } from '../../Constants/Constants';
   styleUrl: './games-of-series-in-chronologic-order.component.scss'
 })
 export class GamesOfSeriesInChronologicOrderComponent {
+  @Output() onResults = new EventEmitter()
   protected formGroup = new FormGroup({
     seriesName: new FormControl<string>("", [Validators.required]),
     seriesLang: new FormControl<string>("en", Validators.required)
@@ -23,9 +24,7 @@ export class GamesOfSeriesInChronologicOrderComponent {
     if (this.formGroup.valid) {
       this.query.getProtagonistOfGame(this.formGroup.value.seriesName!, this.formGroup.value.seriesLang!).subscribe(
         data => {
-          const result = data.results.bindings;
-          console.log(result);
-          console.log(data)
+          this.onResults.emit(data.results.bindings)
         }
       )
     }

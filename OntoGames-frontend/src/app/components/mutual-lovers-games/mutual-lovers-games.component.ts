@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { QueryService } from '../../services/query-service.service';
 
 @Component({
@@ -7,13 +7,13 @@ import { QueryService } from '../../services/query-service.service';
   styleUrl: './mutual-lovers-games.component.scss'
 })
 export class MutualLoversGamesComponent {
+  @Output() onResults = new EventEmitter()
 
-  constructor(private query: QueryService){}
+  constructor(private query: QueryService) { }
 
   getMutualLoversGames() {
     this.query.getMutualLoversGames().subscribe(data => {
-      console.log(data);
-      console.log(data.results.bindings);
+      this.onResults.emit(data.results.bindings);
     });
   }
 }
