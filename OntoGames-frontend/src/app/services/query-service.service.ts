@@ -22,7 +22,7 @@ export class QueryService {
     PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX odp: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#>
 
-    select ?titolo where{
+    select ?titolo ?game where{
       ?game a wd:Game .
       ?saga a :Saga .
       ?saga odp:hasItem ?game .
