@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { QueryService } from '../../services/query-service.service';
 
@@ -8,6 +8,7 @@ import { QueryService } from '../../services/query-service.service';
   styleUrl: './query-editor.component.scss'
 })
 export class QueryEditorComponent {
+  @Output() onResults = new EventEmitter<any>();
   public queryEditorForm = new FormGroup({
     query: new FormControl("", [Validators.required]),
   })
@@ -17,7 +18,9 @@ export class QueryEditorComponent {
 
   protected sendQuery() {
     if (this.queryEditorForm.valid)
-      this.queryService.getQueryResults(this.queryEditorForm.value.query!).subscribe(data => console.log(data))
+      this.queryService.getQueryResults(this.queryEditorForm.value.query!).subscribe(data => {
+        this.onResults.emit(data.results.bindings);
+      })
     else
       alert("Error")
   }

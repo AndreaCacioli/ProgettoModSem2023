@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { QueryService } from '../../services/query-service.service';
 
 @Component({
@@ -7,10 +7,11 @@ import { QueryService } from '../../services/query-service.service';
   styleUrl: './query-titoli-in-saga.component.scss'
 })
 export class QueryTitoliInSagaComponent {
-  constructor(private queryService:QueryService){}
-  public query(){
-    this.queryService.getTitlesInASaga().subscribe((data: any)=>{
-      console.log(data)
+  @Output() onResults = new EventEmitter()
+  constructor(private queryService: QueryService) { }
+  public query() {
+    this.queryService.getTitlesInASaga().subscribe((data: any) => {
+      this.onResults.emit(data.results.bindings)
     })
   }
 }

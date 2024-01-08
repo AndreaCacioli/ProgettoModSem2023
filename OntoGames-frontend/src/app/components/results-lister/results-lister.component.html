@@ -1,0 +1,11 @@
+<p>{{results | stringify}}</p>
+<ul>
+    <div *ngFor="let result of results">
+        <li>
+            <ul>
+                <li *ngFor="let key of getKeys(result)"> {{key}}: {{result[key].value}}</li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+    </div>
+</ul>

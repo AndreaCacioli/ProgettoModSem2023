@@ -17,6 +17,12 @@ import { FindStudioDateComponent } from './components/find-studio-date/find-stud
 import { MatSelectModule } from '@angular/material/select';
 import { FindGameProtagonistComponent } from './components/find-game-protagonist/find-game-protagonist.component';
 import { GamesOfSeriesInChronologicOrderComponent } from './components/games-of-series-in-chronologic-order/games-of-series-in-chronologic-order.component';
+import { FemaleProtagonistGamesComponent } from './components/female-protagonist-games/female-protagonist-games.component';
+import { MutualLoversGamesComponent } from './components/mutual-lovers-games/mutual-lovers-games.component';
+import { ResultsListerComponent } from './components/results-lister/results-lister.component';
+import { StringifyPipe } from './stringify.pipe';
+import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -30,6 +36,10 @@ import { GamesOfSeriesInChronologicOrderComponent } from './components/games-of-
     FindStudioDateComponent,
     FindGameProtagonistComponent,
     GamesOfSeriesInChronologicOrderComponent,
+    FemaleProtagonistGamesComponent,
+    MutualLoversGamesComponent,
+    ResultsListerComponent,
+    StringifyPipe,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +51,8 @@ import { GamesOfSeriesInChronologicOrderComponent } from './components/games-of-
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
+    MatTableModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

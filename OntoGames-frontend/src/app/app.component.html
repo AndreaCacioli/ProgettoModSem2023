@@ -1,26 +1,30 @@
 <h1>OntoGames</h1>
-<button mat-raised-button color="primary" routerLink="editor">Query Editor</button>
-<button mat-raised-button color="primary" routerLink="query1">Query 1</button>
-<button mat-raised-button color="primary"routerLink="query2">Query 2</button>
-<button mat-raised-button color="primary"routerLink="query3">Query 3</button>
-<button mat-raised-button color="primary"routerLink="query4">Query 4</button>
+<div>
+    <button mat-raised-button color="primary" (click)="editor()">Query Editor</button>
+    <button mat-raised-button color="primary" (click)="query1()">Query 1</button>
+    <button mat-raised-button color="primary" (click)="query2()">Query 2</button>
+    <button mat-raised-button color="primary" (click)="query3()">Query 3</button>
+    <button mat-raised-button color="primary" (click)="query4()">Query 4</button>
+    <button mat-raised-button color="primary" (click)="query5()">Query 5</button>
+    <button mat-raised-button color="primary" (click)="query6()">Query 6</button>
+    <button mat-raised-button color="primary" (click)="query7()">Query 7</button>
+    <button mat-raised-button color="primary" (click)="query8()">Query 8</button>
+    <button mat-raised-button color="primary" (click)="query9()">Query 9</button>
+</div>
 
-<h4>{{"Query Editor" | titlecase}}</h4>
-<app-query-editor></app-query-editor>
-<h4>{{"find studio settling date" | titlecase}}</h4>
-<app-find-studio-date></app-find-studio-date>
-<h4>{{"find game protagonist" | titlecase}}</h4>
-<app-find-game-protagonist></app-find-game-protagonist>
-<h4>{{"find games of series in chronologic order" | titlecase}}</h4>
-<app-games-of-series-in-chronologic-order></app-games-of-series-in-chronologic-order>
+<app-query-editor *ngIf="selected == 'editor'" (onResults)="updateHolder($event)"></app-query-editor>
+<app-query-titoli-in-saga *ngIf="selected == 'query1'" (onResults)="updateHolder($event)"></app-query-titoli-in-saga>
+<app-query-saga-dato-titolo *ngIf="selected == 'query2'"
+    (onResults)="updateHolder($event)"></app-query-saga-dato-titolo>
+<app-query-studio-dato-titolo *ngIf="selected == 'query3'"
+    (onResults)="updateHolder($event)"></app-query-studio-dato-titolo>
+<app-query-count-games-in-saga *ngIf="selected == 'query4'"
+    (onResults)="updateHolder($event)"></app-query-count-games-in-saga>
+<app-find-studio-date *ngIf="selected == 'query5'" (onResults)="updateHolder($event)"></app-find-studio-date>
+<app-find-game-protagonist *ngIf="selected == 'query6'" (onResults)="updateHolder($event)"></app-find-game-protagonist>
+<app-games-of-series-in-chronologic-order *ngIf="selected == 'query7'"></app-games-of-series-in-chronologic-order>
+<app-female-protagonist-games (onResults)="updateHolder($event)"
+    *ngIf="selected == 'query8'"></app-female-protagonist-games>
+<app-mutual-lovers-games *ngIf="selected == 'query9'" (onResults)="updateHolder($event)"></app-mutual-lovers-games>
 
-
-<button mat-raised-button color="primary" (click)="getFemaleProtagonistsGames()">
-    Female Protagonist Games!
-</button>
-
-<button mat-raised-button color="primary" (click)="getMutualLoversGames()">
-    Games With Mutual Lovers!
-</button>
-
-<router-outlet></router-outlet>
+<app-results-lister [results]="holder"></app-results-lister>

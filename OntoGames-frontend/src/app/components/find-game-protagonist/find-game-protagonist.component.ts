@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { QueryService } from '../../services/query-service.service';
 import { Constants } from '../../Constants/Constants';
@@ -9,6 +9,7 @@ import { Constants } from '../../Constants/Constants';
   styleUrl: './find-game-protagonist.component.scss'
 })
 export class FindGameProtagonistComponent {
+  @Output() onResults = new EventEmitter()
   protected formGroup = new FormGroup({
     gameName: new FormControl<string>("", [Validators.required]),
     gameLang: new FormControl<string>("en", Validators.required)
@@ -25,7 +26,7 @@ export class FindGameProtagonistComponent {
         data => {
           const result = data.results.bindings;
           console.log(result);
-          console.log(data)
+          this.onResults.emit(data.results.bindings)
         }
       )
     }
