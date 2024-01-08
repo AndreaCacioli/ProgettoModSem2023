@@ -1,21 +1,23 @@
-<h4>{{"find studio settling date" | titlecase}}</h4>
+<div class="main">
+    <h4>{{"find studio settling date" | titlecase}}</h4>
 
-<form [formGroup]="formGroup">
-    <mat-form-field>
-        <mat-label>Studio Name</mat-label>
-        <input type="text" matInput formControlName="studioName">
-    </mat-form-field>
+    <form [formGroup]="formGroup">
+        <mat-form-field>
+            <mat-label>Studio Name</mat-label>
+            <input type="text" matInput formControlName="studioName">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Select Language</mat-label>
+            <mat-select placeholder="language" formControlName="studioLang">
+                <mat-option *ngFor="let lang of languages" [value]="lang">
+                    {{ lang }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-    <mat-form-field>
-        <mat-select placeholder="language" formControlName="studioLang">
-            <mat-option *ngFor="let lang of languages" [value]="lang">
-                {{ lang }}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-
-
-    <button mat-raised-button color="primary" (click)="onClick()">
-        Send Query
-    </button>
-</form>
+    </form>
+        <button mat-raised-button color="primary" (click)="onClick()">
+            Send Query
+        </button>
+</div>

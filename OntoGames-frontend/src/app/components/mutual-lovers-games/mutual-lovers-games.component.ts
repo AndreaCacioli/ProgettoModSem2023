@@ -7,13 +7,15 @@ import { QueryService } from '../../services/query-service.service';
   styleUrl: './mutual-lovers-games.component.scss'
 })
 export class MutualLoversGamesComponent {
-  @Output() onResults = new EventEmitter()
+  @Output() onResults = new EventEmitter();  @Output() onLoadingStateChange = new EventEmitter()
 
   constructor(private query: QueryService) { }
 
   getMutualLoversGames() {
     this.query.getMutualLoversGames().subscribe(data => {
       this.onResults.emit(data.results.bindings);
+      this.onLoadingStateChange.emit(false)
     });
+    this.onLoadingStateChange.emit(true)
   }
 }

@@ -9,7 +9,7 @@ import { Constants } from '../../Constants/Constants';
   styleUrl: './games-of-series-in-chronologic-order.component.scss'
 })
 export class GamesOfSeriesInChronologicOrderComponent {
-  @Output() onResults = new EventEmitter()
+  @Output() onResults = new EventEmitter();  @Output() onLoadingStateChange = new EventEmitter()
   protected formGroup = new FormGroup({
     seriesName: new FormControl<string>("", [Validators.required]),
     seriesLang: new FormControl<string>("en", Validators.required)
@@ -22,11 +22,13 @@ export class GamesOfSeriesInChronologicOrderComponent {
 
   onClick() {
     if (this.formGroup.valid) {
-      this.query.getProtagonistOfGame(this.formGroup.value.seriesName!, this.formGroup.value.seriesLang!).subscribe(
+      this.query.getGamesInChronologicOrderOfSeries(this.formGroup.value.seriesName!, this.formGroup.value.seriesLang!).subscribe(
         data => {
           this.onResults.emit(data.results.bindings)
+          this.onLoadingStateChange.emit(false)
         }
       )
+      this.onLoadingStateChange.emit(true)
     }
     else alert("error");
 

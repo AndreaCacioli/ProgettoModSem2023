@@ -171,8 +171,8 @@ export class QueryService {
       select distinct ?game ?gameWDDate where { 
           ?series a :Saga .
           ?series :name ?seriesName .
-          filter (lang(?seriesName) = "en") .
-          filter (str(?seriesName) = "The Rocket League Saga") .
+          filter (lang(?seriesName) = "${seriesLang}") .
+          filter (str(?seriesName) = "${seriesName}") .
           ?game a wd:Game .
           ?series odp:hasItem ?game .
           ?game :name ?gameName .

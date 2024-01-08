@@ -9,7 +9,7 @@ import { Constants } from '../../Constants/Constants';
   styleUrl: './find-game-protagonist.component.scss'
 })
 export class FindGameProtagonistComponent {
-  @Output() onResults = new EventEmitter()
+  @Output() onResults = new EventEmitter();  @Output() onLoadingStateChange = new EventEmitter()
   protected formGroup = new FormGroup({
     gameName: new FormControl<string>("", [Validators.required]),
     gameLang: new FormControl<string>("en", Validators.required)
@@ -27,8 +27,10 @@ export class FindGameProtagonistComponent {
           const result = data.results.bindings;
           console.log(result);
           this.onResults.emit(data.results.bindings)
+          this.onLoadingStateChange.emit(false)
         }
       )
+      this.onLoadingStateChange.emit(true)
     }
     else alert("error");
 

@@ -1,5 +1,5 @@
 <h1>OntoGames</h1>
-<div>
+<div class="buttonsDiv">
     <button mat-raised-button color="primary" (click)="editor()">Query Editor</button>
     <button mat-raised-button color="primary" (click)="query1()">Query 1</button>
     <button mat-raised-button color="primary" (click)="query2()">Query 2</button>
@@ -12,19 +12,19 @@
     <button mat-raised-button color="primary" (click)="query9()">Query 9</button>
 </div>
 
-<app-query-editor *ngIf="selected == 'editor'" (onResults)="updateHolder($event)"></app-query-editor>
-<app-query-titoli-in-saga *ngIf="selected == 'query1'" (onResults)="updateHolder($event)"></app-query-titoli-in-saga>
+<app-query-editor *ngIf="selected == 'editor'" (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-query-editor>
+<app-query-titoli-in-saga *ngIf="selected == 'query1'" (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-query-titoli-in-saga>
 <app-query-saga-dato-titolo *ngIf="selected == 'query2'"
-    (onResults)="updateHolder($event)"></app-query-saga-dato-titolo>
+    (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-query-saga-dato-titolo>
 <app-query-studio-dato-titolo *ngIf="selected == 'query3'"
-    (onResults)="updateHolder($event)"></app-query-studio-dato-titolo>
+    (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-query-studio-dato-titolo>
 <app-query-count-games-in-saga *ngIf="selected == 'query4'"
-    (onResults)="updateHolder($event)"></app-query-count-games-in-saga>
-<app-find-studio-date *ngIf="selected == 'query5'" (onResults)="updateHolder($event)"></app-find-studio-date>
-<app-find-game-protagonist *ngIf="selected == 'query6'" (onResults)="updateHolder($event)"></app-find-game-protagonist>
-<app-games-of-series-in-chronologic-order *ngIf="selected == 'query7'"></app-games-of-series-in-chronologic-order>
-<app-female-protagonist-games (onResults)="updateHolder($event)"
+    (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-query-count-games-in-saga>
+<app-find-studio-date *ngIf="selected == 'query5'" (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-find-studio-date>
+<app-find-game-protagonist *ngIf="selected == 'query6'" (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-find-game-protagonist>
+<app-games-of-series-in-chronologic-order *ngIf="selected == 'query7'" (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-games-of-series-in-chronologic-order>
+<app-female-protagonist-games (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"
     *ngIf="selected == 'query8'"></app-female-protagonist-games>
-<app-mutual-lovers-games *ngIf="selected == 'query9'" (onResults)="updateHolder($event)"></app-mutual-lovers-games>
+<app-mutual-lovers-games *ngIf="selected == 'query9'" (onResults)="updateHolder($event)" (onLoadingStateChange)="updateLoading($event)"></app-mutual-lovers-games>
 
-<app-results-lister [results]="holder"></app-results-lister>
+<app-results-lister [results]="holder" [loading]="loading"></app-results-lister>

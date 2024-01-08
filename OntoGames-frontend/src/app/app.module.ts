@@ -23,6 +23,8 @@ import { ResultsListerComponent } from './components/results-lister/results-list
 import { StringifyPipe } from './stringify.pipe';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatSelectModule,
     MatTableModule,
     MatDividerModule,
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,10 +9,15 @@ import { QueryService } from './services/query-service.service';
 export class AppComponent {
   updateHolder($event: any) {
     this.holder = $event;
-    console.log(this.holder);
+    //console.log(this.holder);
+  }
+  updateLoading($event: any) {
+    this.loading = $event;
+    console.log(this.loading);
   }
   protected selected: string = "editor";
   @Input() protected holder: any;
+  @Input() protected loading: any;
   title = 'OntoGames-frontend';
 
   query9() {

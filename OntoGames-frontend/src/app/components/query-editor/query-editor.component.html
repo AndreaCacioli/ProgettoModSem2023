@@ -1,9 +1,13 @@
-<form [formGroup]="queryEditorForm">
-    <mat-form-field>
-        <textarea matInput placeholder="Insert Query Here!" formControlName="query">
+<div class="main">
+    <h3>Insert a custom query</h3>
+    <form [formGroup]="queryEditorForm">
+        <mat-form-field>
+            <textarea matInput cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize" placeholder="Insert Query Here!" formControlName="query">
         </textarea>
-    </mat-form-field>
-</form>
-<button mat-raised-button color="primary" (click)="sendQuery()">
-    Send Query
-</button>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" (click)="sendQuery()">
+        Send Query
+    </button>
+</div>

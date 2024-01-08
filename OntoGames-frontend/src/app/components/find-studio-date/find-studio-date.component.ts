@@ -9,7 +9,7 @@ import { Constants } from '../../Constants/Constants'
   styleUrl: './find-studio-date.component.scss'
 })
 export class FindStudioDateComponent {
-  @Output() onResults = new EventEmitter()
+  @Output() onResults = new EventEmitter();  @Output() onLoadingStateChange = new EventEmitter()
   protected formGroup = new FormGroup({
     studioName: new FormControl<string>("", [Validators.required]),
     studioLang: new FormControl<string>("en", Validators.required)
@@ -25,8 +25,10 @@ export class FindStudioDateComponent {
       this.query.getStudiosFoundationDate(this.formGroup.value.studioName!, this.formGroup.value.studioLang!).subscribe(
         data => {
           this.onResults.emit(data.results.bindings);
+          this.onLoadingStateChange.emit(false)
         }
       )
+      this.onLoadingStateChange.emit(true)
     }
     else alert("error");
 

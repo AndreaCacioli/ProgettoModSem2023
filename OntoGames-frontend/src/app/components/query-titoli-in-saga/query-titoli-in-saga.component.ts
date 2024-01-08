@@ -7,11 +7,14 @@ import { QueryService } from '../../services/query-service.service';
   styleUrl: './query-titoli-in-saga.component.scss'
 })
 export class QueryTitoliInSagaComponent {
-  @Output() onResults = new EventEmitter()
+  @Output() onResults = new EventEmitter(); 
+  @Output() onLoadingStateChange = new EventEmitter()
   constructor(private queryService: QueryService) { }
   public query() {
     this.queryService.getTitlesInASaga().subscribe((data: any) => {
       this.onResults.emit(data.results.bindings)
+      this.onLoadingStateChange.emit(false)
     })
+    this.onLoadingStateChange.emit(true)
   }
 }
