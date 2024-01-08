@@ -1,21 +1,24 @@
-<h4>{{"find games of series in chronologic order" | titlecase}}</h4>
+<div class="main">
+    <h4>{{"find games of series in chronologic order" | titlecase}}</h4>
 
-<form [formGroup]="formGroup">
-    <mat-form-field>
-        <mat-label>Series Name</mat-label>
-        <input type="text" matInput formControlName="seriesName">
-    </mat-form-field>
+    <form [formGroup]="formGroup">
+        <mat-form-field>
+            <mat-label>Series Name</mat-label>
+            <input type="text" matInput formControlName="seriesName">
+        </mat-form-field>
 
-    <mat-form-field>
-        <mat-select placeholder="language" formControlName="seriesLang">
-            <mat-option *ngFor="let lang of languages" [value]="lang">
-                {{ lang }}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+        <mat-form-field>
+            <mat-label>Select Language</mat-label>
+            <mat-select placeholder="language" formControlName="seriesLang">
+                <mat-option *ngFor="let lang of languages" [value]="lang">
+                    {{ lang }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
 
-    <button mat-raised-button color="primary" (click)="onClick()">
-        Send Query
-    </button>
-</form>
+        <button mat-raised-button color="primary" (click)="onClick()">
+            Send Query
+        </button>
+    </form>
+</div>

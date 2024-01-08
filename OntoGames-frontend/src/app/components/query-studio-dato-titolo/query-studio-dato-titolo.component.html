@@ -1,7 +1,9 @@
-<h3>Find Studio, given title</h3>
-<form class="insertion-form" [formGroup]="form">
-    <mat-form-field>
-        <input matInput placeholder="Title" formControlName="title">
-    </mat-form-field>
-</form>
-<button mat-raised-button color="primary" (click)="query()">Search</button>
+<div class="main">
+    <h3>Find Studio, given title</h3>
+    <form class="insertion-form" [formGroup]="form">
+        <mat-form-field>
+            <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" (click)="query()">Search</button>
+</div>

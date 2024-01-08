@@ -9,11 +9,14 @@ import { QueryService } from '../../services/query-service.service';
 export class FemaleProtagonistGamesComponent {
 
   @Output() onResults = new EventEmitter<any>();
+  @Output() onLoadingStateChange = new EventEmitter<any>();
   constructor(private query: QueryService) { }
 
   getFemaleProtagonistsGames() {
     this.query.getFemaleProtagonistGames().subscribe(data => {
       this.onResults.emit(data.results.bindings);
+      this.onLoadingStateChange.emit(false)
     });
+    this.onLoadingStateChange.emit(true)
   }
 }

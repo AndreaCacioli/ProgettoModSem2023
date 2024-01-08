@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @Component({
   selector: 'app-results-lister',
@@ -7,6 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ResultsListerComponent {
   @Input() results: any = undefined;
+  @Input() loading: any = undefined;
   protected getKeys(o: object): any {
     return Object.keys(o);
   }

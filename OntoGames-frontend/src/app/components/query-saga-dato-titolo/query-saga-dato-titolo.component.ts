@@ -8,7 +8,7 @@ import { QueryService } from '../../services/query-service.service';
   styleUrl: './query-saga-dato-titolo.component.scss'
 })
 export class QuerySagaDatoTitoloComponent {
-  @Output() onResults = new EventEmitter()
+  @Output() onResults = new EventEmitter();  @Output() onLoadingStateChange = new EventEmitter()
   form = new FormGroup({
     title: new FormControl(''),
   })
@@ -17,6 +17,8 @@ export class QuerySagaDatoTitoloComponent {
   public query() {
     this.queryService.getSagaFromTitle(this.form.value.title).subscribe((data: any) => {
       this.onResults.emit(data.results.bindings)
+      this.onLoadingStateChange.emit(false)
     })
+    this.onLoadingStateChange.emit(true)
   }
 }
