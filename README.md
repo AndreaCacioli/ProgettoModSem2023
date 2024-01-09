@@ -1,5 +1,7 @@
 # ProgettoModSem2023
 
+[toc]
+
 ![OOPS Pitfall Free certificate](oops_free.png)
 
 Questa repo contiene l'ontologia OntoGames relativa al mondo dei videogiochi.
@@ -91,6 +93,17 @@ Per questo progetto ci siamo posti il problema di rappresentare il videogioco pa
 
     ![Pagina del videogioco "Martha is Dead" nella sezione categorie](./Images/MarthaIsDeadSteam_categories.png)
 
+Per essere in linea con le ontologie giá esistenti, abbiamo utilizzato:
+
+- dbpedia
+  - Concetto di Software
+- wikidata
+  - Concetto dei personaggi fittizi (immaginari)
+- schema
+  - Concetto di prodotto come di qualcosa che puó essere venduto
+
+Inoltre abbiamo utilizzato l'**Ontology Design Pattern** lista per  modellare i giochi di una saga.
+
 ---
 
 ## Visualizzazione
@@ -125,6 +138,18 @@ Esempio Triple da sezione [Descrizione Dominio](#descrizione-dominio).
 | Giulia   | loves         | Lapo           |
 
 ## Interazione Utente
+
+### Esempi Interazione dell'utente col sistema
+
+Esempio 1:
+
+![Esempio Videogioco come ambientazione](Images/interazione.PNG)
+
+Esempio 2:
+
+![Esempio Videogioco come prodotto vendibile](Images/interazione2.PNG)
+
+### Mock Up Interfaccia Client
 
 ---
 
