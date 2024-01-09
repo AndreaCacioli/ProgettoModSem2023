@@ -73,18 +73,22 @@ Per questo progetto ci siamo posti il problema di rappresentare il videogioco pa
 - **SteamDB**
     Un database in cui é possibile trovare informazioni sul gioco visto come prodotto: le copie vendute, gli utenti online che stanno giocando ad un qualche gioco, il costo di un gioco, il suo indice di gradimento, le piattaforme supportate, i developer e molto altro ancora.
     Qui sotto si possono vedere delle immagini della pagina principale di questo sito e della pagina del videogioco "Cyberpunk 2077".
+
     ![La pagina principale di SteamDB](./Images/SteamDB.png)
+
     ![La pagina del videogioco "Cyberpunk 2077" di SteamDB](./Images/CyberPunkSteamDb.png)
 
 - **Wiki Fandom**
     Wiki Fandom é un sito che permette a tutti i fan di qualcosa di creare le proprie wiki in cui raccogliere le informazioni relative alla loro passione.
     In particolare sono presenti numerose wiki su videogiochi, film e libri. Tale sito é una risorsa importante per tutti i giochi con una storia visti come ambientazione di eventi e, appunto, come storie.
     Qui di seguito abbiamo riportato la pagina del videogioco "Martha is Dead" presa da Wiki Fandom.
+
     ![Pagina del videogioco "Martha is Dead" presa da Wiki Fandom](./Images/MarthaIsDeadFandom.png)
 
 - **Steam**
     Steam é il principale marketplace per la vendita di videogiochi su PC ed in quanto tale ha delle pagine per ogni videogioco. In tali pagine si possono vedere le categorie a cui il videogioco appartiene. Durante la modellazione delle classi e per alcune regole SWRL, questo strumento ci ha permesso di trovare ulteriori categorizzazioni che si possono dare ai videogiochi. Ad esempio RPG o Female Protagonist.
     Qui di seguito una foto della pagina del videogioco "Martha is Dead" nella sezione categorie.
+
     ![Pagina del videogioco "Martha is Dead" nella sezione categorie](./Images/MarthaIsDeadSteam_categories.png)
 
 ---
@@ -92,9 +96,11 @@ Per questo progetto ci siamo posti il problema di rappresentare il videogioco pa
 ## Visualizzazione
 
 Tassonomia:
+
 ![Tassonomia](./OntoGraf/Tassonomia.PNG)
 
 A-Box:
+
 ![A-Box](./OntoGraf/A-Box.PNG)
 
 Esempio Triple da sezione [Descrizione Dominio](#descrizione-dominio).
@@ -127,35 +133,55 @@ Esempio Triple da sezione [Descrizione Dominio](#descrizione-dominio).
 É riportata qua sotto una lista delle query che sono state sviluppate.
 
 1) Qual é il titolo dei videogiochi che appartengono ad una saga?
-    ![query1](./Queries/1.png)
+
+    ![Query 1](./Queries/1.png)
+
     Per ogni videogioco che appartiene ad una qualche saga, lo si estrae e si restituisce il nome in inglese.
 2) Di che saga fa parte un videogioco?
-    ![query2](./Queries/2.png)
+
+    ![Query 2](./Queries/2.png)
+
     Si parte dal nome di un videogioco e si trova la saga di appartenenza di tale videogioco.
     In questo esempio é mostrato il gioco FIFA 2020.
 3) Qual é lo studio di un videogioco?
-    ![query3](./Queries/3.png)
+
+    ![Query 3](./Queries/3.png)
+
     Si parte dal nome di un videogioco e si trova il nome dello studio che lo ha creato.
     Nell'esempio la lingua di ritorno é quella italiana
 4) Quanti sono i videogiochi di una particolare saga?
-    ![query4](./Queries/4.png)
+
+    ![Query 4](./Queries/4.png)
+
     Si parte dal nome di una saga e si restituisce il COUNT dei titoli che ne fanno parte.
 5) Qual é la data di fondazione di uno studio?
-    ![query5 query](./Queries/5q.png)
-    ![query5 results](./Queries/5r.png)
+
+    ![Query 5 query](./Queries/5q.png)
+
+    ![Query 5 results](./Queries/5r.png)
+
     Si parte dal nome di uno studio e si fa la query federata per trovare uno "studio di wikidata" e se ne estrae la data di fondazione.
 6) Qual é il protagonista di un certo videogioco?
-    ![query6](./Queries/6.png)
+
+    ![Query 6](./Queries/6.png)
+
     Si parte dal nome di un videogioco e si trova un personaggio che é protagonista del gioco stesso.
 7) Qual é l'ordine cronologico dei videogiochi di una saga?
-    ![query7 query](./Queries/7q.png)
-    ![query7 results](./Queries/7r.png)
+
+    ![Query 7 query](./Queries/7q.png)
+
+    ![Query 7 results](./Queries/7r.png)
+
     Si parte dal nome di una saga, si prendono tutti i suoi giochi e per ognuno di essi si trova la data di pubblicazione in maniera federata da wikidata e la si restituisce insieme al gioco stesso.
 8) Tutti i titoli con protagonista femminile.
-    ![query8](./Queries/8.png)
+
+    ![Query 8](./Queries/8.png)
+
     Si restituiscono tutti i titoli con protagonista femminile.
 9) Tutti i titoli con storie d'amore contraccambiate.
-    ![query9](./Queries/9.png)
+
+    ![Query 9](./Queries/9.png)
+
     Si trovano tutti i personaggi che si amano a vicenda e si restituisce il gioco in cui entrambi compaiono.
 
 ## Estensioni
