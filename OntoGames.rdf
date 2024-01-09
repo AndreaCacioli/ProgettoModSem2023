@@ -11,12 +11,21 @@
      xmlns:list="http://www.ontologydesignpatterns.org/cp/owl/list.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology">
         <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl"/>
-        <rdfs:comment>Ontology focused on videogames&apos; characters interactions</rdfs:comment>
+        <dc:creator>Andrea Cacioli</dc:creator>
+        <dc:creator>Samuele Cavagnino</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-09T11:43:00</dc:date>
+        <dc:description xml:lang="en">An ontology that wants to describe videogames&apos;s dual nature of product and story scenario</dc:description>
+        <dc:title xml:lang="en">OntoGames</dc:title>
+        <vann:preferredNamespacePrefix>http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>OntoGames</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">Ontology focused on videogames&apos; characters interactions</rdfs:comment>
+        <rdfs:label xml:lang="en">OntoGames</rdfs:label>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -30,6 +39,42 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
     
 
 

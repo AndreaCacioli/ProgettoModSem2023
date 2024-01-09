@@ -278,5 +278,6 @@ Abbiamo creato 5 regole SWRL per definire concetti di supporto per l'ontologia:
 5) RPG: (Role Playing Game) Un gioco di ruolo in cui ci sono personaggi non umani
 
     ```SWRL
-    autogen0:Game(?g) ^ Character(?c) ^ appearsIn(?c, ?g) ^ class(?c, ?cclass) ^ swrlb:notEqual(?cclass, "Human") -> RPG(?g) 
+    autogen0:Game(?g) ^ Character(?c) ^ appearsIn(?c, ?g) ^ class(?c, ?cclass) ^
+    swrlb:notEqual(?cclass, "Human") -> RPG(?g) 
     ```

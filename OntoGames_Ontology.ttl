@@ -1,5 +1,5 @@
 @prefix : <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix bag: <https://bag2.basisregistraties.overheid.nl/bag/def/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,16 +7,49 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/> .
 
 <http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology> rdf:type owl:Ontology ;
                                                                          owl:imports <http://www.ontologydesignpatterns.org/cp/owl/list.owl> ;
-                                                                         rdfs:comment "Ontology focused on videogames' characters interactions" ;
+                                                                         <http://purl.org/dc/elements/1.1/creator> "Andrea Cacioli" ,
+                                                                                                                   "Samuele Cavagnino" ;
+                                                                         <http://purl.org/dc/elements/1.1/date> "2024-01-09T11:43:00"^^xsd:dateTime ;
+                                                                         <http://purl.org/dc/elements/1.1/description> "An ontology that wants to describe videogames's dual nature of product and story scenario"@en ;
+                                                                         <http://purl.org/dc/elements/1.1/title> "OntoGames"@en ;
+                                                                         vann:preferredNamespacePrefix "http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology" ;
+                                                                         vann:preferredNamespaceUri "OntoGames" ;
+                                                                         rdfs:comment "Ontology focused on videogames' characters interactions"@en ;
+                                                                         rdfs:label "OntoGames"@en ;
                                                                          owl:versionInfo 1.0 .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
 
 ###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
