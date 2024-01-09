@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology_inferred#"
-     xml:base="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology_inferred"
+<rdf:RDF xmlns="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology#"
+     xml:base="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:bag="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -9,13 +10,21 @@
      xmlns:list="http://www.ontologydesignpatterns.org/cp/owl/list.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:sequence="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#"
      xmlns:collectionentity="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#"
      xmlns:OntoGames_Ontology="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/"
      xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology_inferred">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology">
+        <dc:creator>Andrea Cacioli</dc:creator>
+        <dc:creator>Samuele Cavagnino</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-09T11:43:00</dc:date>
+        <dc:description xml:lang="en">An ontology that wants to describe videogames&apos;s dual nature of product and story scenario</dc:description>
+        <dc:title xml:lang="en">OntoGames</dc:title>
+        <vann:preferredNamespacePrefix>http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>OntoGames</vann:preferredNamespaceUri>
         <cpannotationschema:coversRequirements>What is before what?,What&apos;s next?,What&apos;s immediately following this?</cpannotationschema:coversRequirements>
         <cpannotationschema:coversRequirements>What things are contained in this collection (community, collective)? What collections this thing is member of?</cpannotationschema:coversRequirements>
         <cpannotationschema:coversRequirements>What are the items (elements) in this list?</cpannotationschema:coversRequirements>
@@ -49,10 +58,11 @@ It can then be used between tasks, processes, time intervals, spatially locate o
         <cpannotationschema:relatedCPs>http://www.ontologydesignpatterns.org/cp/owl/list.owl</cpannotationschema:relatedCPs>
         <cpannotationschema:relatedCPs>http://www.ontologydesignpatterns.org/cp/owl/set.owl</cpannotationschema:relatedCPs>
         <cpannotationschema:scenarios>My saxophone collection includes a Mark VI tenor, a Balanced Action alto, and a Conn Transitional bari.</cpannotationschema:scenarios>
+        <rdfs:comment xml:lang="en">Ontology focused on videogames&apos; characters interactions</rdfs:comment>
         <rdfs:comment>The collection entity pattern. 
 It is extracted from DOLCE-UltraLite by partial clone of elements.</rdfs:comment>
-        <rdfs:comment>Ontology focused on videogames&apos; characters interactions</rdfs:comment>
         <rdfs:comment>The Bag is characterized by a collection that can have multiple copies of each object. This is performed through the Item entity. The Item is linking exaclty one resource through the relationship itemContent.</rdfs:comment>
+        <rdfs:label xml:lang="en">OntoGames</rdfs:label>
         <rdfs:label>collection entity</rdfs:label>
         <rdfs:label>membership</rdfs:label>
         <rdfs:label>ordering</rdfs:label>
@@ -78,6 +88,42 @@ It is extracted from DOLCE-UltraLite by partial clone of elements.</rdfs:comment
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
     
 
 

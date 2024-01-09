@@ -151,6 +151,12 @@ Esempio 2:
 
 ### Mock Up Interfaccia Client
 
+![Home page](./Images/moqup1.PNG)
+
+![Home page middle](./Images/moqup2.PNG)
+
+![Home page bottom](./Images/moqup3.PNG)
+
 ---
 
 ## SPARQL Queries
