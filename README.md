@@ -68,6 +68,25 @@ L'ontologia puó "rispondere" a numerose domande, qui ne riportiamo alcune:
 
 ## Documentazione
 
+Per questo progetto ci siamo posti il problema di rappresentare il videogioco partendo dalle varie fonti giá presenti sulla rete. In particolare abbiamo utilizzato:
+
+- **SteamDB**
+    Un database in cui é possibile trovare informazioni sul gioco visto come prodotto: le copie vendute, gli utenti online che stanno giocando ad un qualche gioco, il costo di un gioco, il suo indice di gradimento, le piattaforme supportate, i developer e molto altro ancora.
+    Qui sotto si possono vedere delle immagini della pagina principale di questo sito e della pagina del videogioco "Cyberpunk 2077".
+    ![La pagina principale di SteamDB](./Images/SteamDB.png)
+    ![La pagina del videogioco "Cyberpunk 2077" di SteamDB](./Images/CyberPunkSteamDb.png)
+
+- **Wiki Fandom**
+    Wiki Fandom é un sito che permette a tutti i fan di qualcosa di creare le proprie wiki in cui raccogliere le informazioni relative alla loro passione.
+    In particolare sono presenti numerose wiki su videogiochi, film e libri. Tale sito é una risorsa importante per tutti i giochi con una storia visti come ambientazione di eventi e, appunto, come storie.
+    Qui di seguito abbiamo riportato la pagina del videogioco "Martha is Dead" presa da Wiki Fandom.
+    ![Pagina del videogioco "Martha is Dead" presa da Wiki Fandom](./Images/MarthaIsDeadFandom.png)
+
+- **Steam**
+    Steam é il principale marketplace per la vendita di videogiochi su PC ed in quanto tale ha delle pagine per ogni videogioco. In tali pagine si possono vedere le categorie a cui il videogioco appartiene. Durante la modellazione delle classi e per alcune regole SWRL, questo strumento ci ha permesso di trovare ulteriori categorizzazioni che si possono dare ai videogiochi. Ad esempio RPG o Female Protagonist.
+    Qui di seguito una foto della pagina del videogioco "Martha is Dead" nella sezione categorie.
+    ![Pagina del videogioco "Martha is Dead" nella sezione categorie](./Images/MarthaIsDeadSteam_categories.png)
+
 ---
 
 ## Visualizzazione
