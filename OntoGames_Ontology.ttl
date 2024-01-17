@@ -626,6 +626,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :AssettoCorsaCompetizione rdf:type owl:NamedIndividual ,
                                    <http://www.wikidata.org/entity/Game> ;
                           :madeBy :Kunos_Simulazioni ;
+                          :name "Assetto Corsa Competizione"@en ,
+                                "Assetto Corsa Competizione"@it ;
                           rdfs:comment "Simulative racing Game, also known as ACC"@en ;
                           rdfs:label "Assetto Corsa Competizione"@en .
 
@@ -634,6 +636,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Aston_Martin_GT3 rdf:type owl:NamedIndividual ,
                            :Car ;
                   :isAssetOf :AssettoCorsaCompetizione ;
+                  :name "Aston Martin Vantage GT3"@en ,
+                        "Aston Martin Vantage GT3"@it ;
                   rdfs:comment "GT3 car from ACC"@en ;
                   rdfs:label "Aston Martin Vantage GT3"@en .
 
@@ -642,6 +646,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Audi_GT3 rdf:type owl:NamedIndividual ,
                    :Car ;
           :isAssetOf :AssettoCorsaCompetizione ;
+          :name "Audi R8 evo II GT3"@en ,
+                "Audi R8 evo II GT3"@it ;
           rdfs:comment "GT3 car from ACC" ;
           rdfs:label "Audi R8 evo II GT3"@en .
 
@@ -650,6 +656,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :BMW_M4_GT3 rdf:type owl:NamedIndividual ,
                      :Car ;
             :isAssetOf :AssettoCorsaCompetizione ;
+            :name "BMW M4 GT3"@en ,
+                  "BMW M4 GT3"@it ;
             rdfs:comment "GT3 car from Assetto Corsa Competizione"@en ;
             rdfs:label "BMW M4 GT3"@en .
 
@@ -658,6 +666,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Barcellona rdf:type owl:NamedIndividual ,
                      :Map ;
             :isMapOf :AssettoCorsaCompetizione ;
+            :name "Barcellona"@it ,
+                  "Barcelona"@en ;
             rdfs:comment "Track from ACC"@en ;
             rdfs:label "Barcellona"@it ,
                        "Barcelona"@en ,
@@ -668,6 +678,7 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :BeckwithPark rdf:type owl:NamedIndividual ,
                        :Map ;
               :isMapOf :RocketLeague ;
+              :name "Backwith Park"@en ;
               rdfs:comment "Arena from Rocket League"@en ;
               rdfs:label "BeckwithPark"@en .
 
@@ -676,6 +687,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Breakout rdf:type owl:NamedIndividual ,
                    :Car ;
           :isAssetOf :RocketLeague ;
+          :name "Breakout"@en ,
+                "Breakout"@it ;
           rdfs:comment "Car from Rocket League"@en ;
           rdfs:label "Breakout"@en .
 
@@ -693,6 +706,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :ChampionsField rdf:type owl:NamedIndividual ,
                          :Map ;
                 :isMapOf :RocketLeague ;
+                :name "Champions Field"@en ,
+                      "Champions Field"@it ;
                 rdfs:comment "Arena from Rocket League"@en ;
                 rdfs:label "ChampionsField"@en .
 
@@ -712,6 +727,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :DFHStadium rdf:type owl:NamedIndividual ,
                      :Map ;
             :isMapOf :RocketLeague ;
+            :name "DFH Stadium"@en ,
+                  "Stadio DFH"@it ;
             rdfs:comment "Arena from Rocket League"@en ;
             rdfs:label "DFHStadium"@en .
 
@@ -720,6 +737,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :DeadeyeCanyon rdf:type owl:NamedIndividual ,
                         :Map ;
                :isMapOf :RocketLeague ;
+               :name "Deadeye Canyon"@en ,
+                     "Deadeye Canyon"@it ;
                rdfs:comment "Arena from Rocket League"@en ;
                rdfs:label "DeadeyeCanyon"@en .
 
@@ -818,6 +837,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Ferrari_GT3 rdf:type owl:NamedIndividual ,
                       :Car ;
              :isAssetOf :AssettoCorsaCompetizione ;
+             :name "Ferrari 296 GT3"@en ,
+                   "Ferrari 296 GT3"@it ;
              rdfs:comment "GT3 car from ACC"@en ;
              rdfs:label "Ferrari 296 GT3"@en .
 
@@ -854,6 +875,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Gizmo rdf:type owl:NamedIndividual ,
                 :Car ;
        :isAssetOf :RocketLeague ;
+       :name "Gizmo"@en ,
+             "Gizmo"@it ;
        rdfs:comment "Car from Rocket League"@en ;
        rdfs:label "Gizmo"@en .
 
@@ -862,6 +885,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Hotshot rdf:type owl:NamedIndividual ,
                   :Car ;
          :isAssetOf :RocketLeague ;
+         :name "Hot Shot"@en ,
+               "Hot Shot"@it ;
          rdfs:comment "Car from Rocket League"@en ;
          rdfs:label "Hotshot"@en .
 
@@ -879,6 +904,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Imola rdf:type owl:NamedIndividual ,
                 :Map ;
        :isMapOf :AssettoCorsaCompetizione ;
+       :name "Autodromo Internazionale di Imola"@en ,
+             "Autodromo Internazionale di Imola"@it ;
        rdfs:comment "Track from ACC"@en ;
        rdfs:label "Autodromo Internazionale di Imola"@en .
 
@@ -888,6 +915,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
                                    :DLC ;
                           :DLCOf :AssettoCorsaCompetizione ;
                           :madeBy :Kunos_Simulazioni ;
+                          :name "Intercontinental GT Pack"@en ,
+                                "Intercontinental GT Pack"@it ;
                           rdfs:comment "DLC from ACC"@en ;
                           rdfs:label "Intercontinental GT Pack"@en .
 
@@ -908,6 +937,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Kunos_Simulazioni
 :Kunos_Simulazioni rdf:type owl:NamedIndividual ,
                             :Studio ;
+                   :name "Kunos Simulazioni"@en ,
+                         "Kunos Simulazioni"@it ;
                    rdfs:comment "VideoGame Studio"@en ;
                    rdfs:label "Kunos Simulazioni"@en .
 
@@ -935,6 +966,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Lamborghini_Huracan_Evo_II_GT3 rdf:type owl:NamedIndividual ,
                                          :Car ;
                                 :isAssetOf :AssettoCorsaCompetizione ;
+                                :name "Lamborghini Huracan Evo II GT3"@en ,
+                                      "Lamborghini Huracan Evo II GT3"@it ;
                                 rdfs:comment "GT3 car from ACC"@en ;
                                 rdfs:label "Lamborghini Huracan Evo II GT3"@en .
 
@@ -984,6 +1017,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Merc rdf:type owl:NamedIndividual ,
                :Car ;
       :isAssetOf :RocketLeague ;
+      :name "Merc"@en ,
+            "Merc"@it ;
       rdfs:comment "Car from Rocket League"@en ;
       rdfs:label "Merc"@en .
 
@@ -992,6 +1027,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Monza rdf:type owl:NamedIndividual ,
                 :Map ;
        :isMapOf :AssettoCorsaCompetizione ;
+       :name "Autodromo Internazionale di Monza"@en ,
+             "Autodromo Internazionale di Monza"@it ;
        rdfs:comment "Track from ACC"@en ;
        rdfs:label "Autodromo Internazionale di Monza"@en .
 
@@ -1005,7 +1042,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Octane
 :Octane rdf:type owl:NamedIndividual ,
                  :Car ;
-        :isAssetOf :RocketLeague ;
+        :isAssetOf :RocketLeague ,
+                   :RocketRacing ;
         :name "Octane"@en ,
               "Octane"@it ;
         rdfs:comment "Car from Rocket League universe"@en ;
@@ -1026,6 +1064,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Porsche_992_GT3 rdf:type owl:NamedIndividual ,
                           :Car ;
                  :isAssetOf :AssettoCorsaCompetizione ;
+                 :name "Porsche 992 GT3"@en ,
+                       "Porsche 992 GT3"@it ;
                  rdfs:comment "GT3 car from ACC"@en ;
                  rdfs:label "Porsche 992 GT3"@en .
 
@@ -1077,7 +1117,10 @@ They might share the universe, the topic, the producer, ..."""@en ;
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RoadHog
-:RoadHog rdf:type owl:NamedIndividual .
+:RoadHog rdf:type owl:NamedIndividual ,
+                  :Car ;
+         :isAssetOf :RocketLeague ;
+         :name "Road Hog"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague
@@ -1129,6 +1172,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Silverstone rdf:type owl:NamedIndividual ,
                       :Map ;
              :isMapOf :AssettoCorsaCompetizione ;
+             :name "Silverstone"@en ,
+                   "Silverstone"@it ;
              rdfs:comment "Track from ACC"@en ;
              rdfs:label "Silverstone"@en .
 
@@ -1184,6 +1229,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Watkins_Glen rdf:type owl:NamedIndividual ,
                        :Map ;
               :isMapOf :AssettoCorsaCompetizione ;
+              :name "Watkins Glen"@en ,
+                    "Watkins Glen"@it ;
               rdfs:comment "Track from ACC"@en ;
               rdfs:label "Watkins Glen"@en .
 
