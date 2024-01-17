@@ -662,7 +662,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/makes"/>
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Software"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
         <rdfs:comment xml:lang="en">relation from a software to a studio</rdfs:comment>
         <rdfs:label xml:lang="en">madeBy</rdfs:label>
@@ -674,7 +674,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/makes">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
-        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Software"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdfs:comment xml:lang="en">relation from a studio to a software</rdfs:comment>
         <rdfs:label xml:lang="en">makes</rdfs:label>
     </owl:ObjectProperty>
@@ -873,7 +873,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/name">
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">The main way something is referred to</rdfs:comment>
+        <rdfs:comment xml:lang="en">The name of something (note that something might have multiple names)</rdfs:comment>
         <rdfs:label xml:lang="en">name</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -901,19 +901,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     
 
 
-    <!-- http://dbpedia.org/ontology/Software -->
-
-    <owl:Class rdf:about="http://dbpedia.org/ontology/Software">
-        <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
-        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
-        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
-        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga"/>
-        <rdfs:comment xml:lang="en">Superclass of VideoGame</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://schema.org/Product -->
 
     <owl:Class rdf:about="http://schema.org/Product">
@@ -938,6 +925,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RPG"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
         <owl:disjointWith rdf:resource="http://www.wikidata.org/entity/Game"/>
         <rdfs:comment>Bag - Collection that can have a number of copies of each object</rdfs:comment>
@@ -974,6 +962,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RPG"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
         <owl:disjointWith rdf:resource="http://www.wikidata.org/entity/Game"/>
         <rdfs:comment>Any container for entities that share one or more common properties. E.g. &quot;stone objects&quot;, &quot;the nurses&quot;, &quot;the Louvre Aegyptian collection&quot;. A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one.</rdfs:comment>
@@ -993,6 +982,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RPG"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
         <owl:disjointWith rdf:resource="http://www.wikidata.org/entity/Game"/>
         <rdfs:comment>List - An ordered array of items, that can be present in multiple copies</rdfs:comment>
@@ -1090,7 +1080,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Software"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga"/>
         <rdfs:comment xml:lang="en">Downloadable Content for a videogame. It generally is an expansion to the base version of the Game</rdfs:comment>
         <rdfs:label xml:lang="en">DLC</rdfs:label>
@@ -1246,11 +1236,22 @@ Usually the  one the player plays as.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Saga">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
         <owl:disjointWith rdf:resource="http://www.wikidata.org/entity/Game"/>
         <rdfs:comment xml:lang="en">A list of games that have something in common and have an intrinsic order.
 They might share the universe, the topic, the producer, ...</rdfs:comment>
         <rdfs:label xml:lang="en">Saga</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+        <rdfs:comment xml:lang="en">Superclass of VideoGame</rdfs:comment>
+        <owl:equivalentClass>http://dbpedia.org/ontology/Software</owl:equivalentClass>
     </owl:Class>
     
 
@@ -1297,7 +1298,7 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.wikidata.org/entity/Game -->
 
     <owl:Class rdf:about="http://www.wikidata.org/entity/Game">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Software"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdfs:comment xml:lang="en">Some sort of videogame</rdfs:comment>
         <rdfs:label xml:lang="en">Game</rdfs:label>
         <owl:equivalentClass>https://www.wikidata.org/wiki/Q7889</owl:equivalentClass>
@@ -1338,6 +1339,99 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione">
+        <rdf:type rdf:resource="http://schema.org/Product"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
+        <OntoGames_Ontology:hasDLC rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Intercontinental_GT_Pack"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Barcellona"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Imola"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Monza"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Silverstone"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Watkins_Glen"/>
+        <OntoGames_Ontology:madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Kunos_Simulazioni"/>
+        <rdfs:comment xml:lang="en">Simulative racing Game, also known as ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Assetto Corsa Competizione</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aston_Martin_GT3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aston_Martin_GT3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">GT3 car from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Aston Martin Vantage GT3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Audi_GT3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Audi_GT3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment>GT3 car from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Audi R8 evo II GT3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/BMW_M4_GT3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/BMW_M4_GT3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">GT3 car from Assetto Corsa Competizione</rdfs:comment>
+        <rdfs:label xml:lang="en">BMW M4 GT3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Barcellona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Barcellona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">Track from ACC</rdfs:comment>
+        <rdfs:label xml:lang="it">Barcellona</rdfs:label>
+        <rdfs:label xml:lang="en">Barcelona</rdfs:label>
+        <rdfs:label xml:lang="es">Barcelona</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/BeckwithPark -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/BeckwithPark">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <rdfs:comment xml:lang="en">Arena from Rocket League</rdfs:comment>
+        <rdfs:label xml:lang="en">BeckwithPark</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Breakout -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Breakout">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <rdfs:comment xml:lang="en">Car from Rocket League</rdfs:comment>
+        <rdfs:label xml:lang="en">Breakout</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED">
@@ -1352,13 +1446,24 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/ChampionsField -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/ChampionsField">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <rdfs:comment xml:lang="en">Arena from Rocket League</rdfs:comment>
+        <rdfs:label xml:lang="en">ChampionsField</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <OntoGames_Ontology:hasCharacter rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/V"/>
@@ -1369,6 +1474,28 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
         <OntoGames_Ontology:name xml:lang="it">Cyberpunk</OntoGames_Ontology:name>
         <rdfs:comment xml:lang="en">Videogame created by CDPRED</rdfs:comment>
         <rdfs:label xml:lang="en">Cyberpunk</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DFHStadium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DFHStadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <rdfs:comment xml:lang="en">Arena from Rocket League</rdfs:comment>
+        <rdfs:label xml:lang="en">DFHStadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DeadeyeCanyon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DeadeyeCanyon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <rdfs:comment xml:lang="en">Arena from Rocket League</rdfs:comment>
+        <rdfs:label xml:lang="en">DeadeyeCanyon</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1408,11 +1535,11 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA20 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA20">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
         <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
@@ -1435,11 +1562,11 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA21 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA21">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
         <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
@@ -1463,11 +1590,11 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA22 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA22">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
         <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
@@ -1491,11 +1618,11 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA23 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA23">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
         <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
@@ -1519,11 +1646,11 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA24 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFA24">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
         <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/FIFASaga"/>
@@ -1581,15 +1708,27 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Ferrari_GT3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Ferrari_GT3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">GT3 car from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Ferrari 296 GT3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Card_Game"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RPG"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <OntoGames_Ontology:hasCharacter rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Raiden"/>
@@ -1633,6 +1772,30 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Gizmo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Gizmo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <rdfs:comment xml:lang="en">Car from Rocket League</rdfs:comment>
+        <rdfs:label xml:lang="en">Gizmo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hotshot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hotshot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <rdfs:comment xml:lang="en">Car from Rocket League</rdfs:comment>
+        <rdfs:label xml:lang="en">Hotshot</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hoyoverse -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hoyoverse">
@@ -1642,6 +1805,33 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
         <OntoGames_Ontology:name xml:lang="it">Hoyoverse</OntoGames_Ontology:name>
         <rdfs:comment xml:lang="en">Studio, creators of Genshin impact</rdfs:comment>
         <rdfs:label xml:lang="en">Hoyoverse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Imola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Imola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">Track from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Autodromo Internazionale di Imola</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Intercontinental_GT_Pack -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Intercontinental_GT_Pack">
+        <rdf:type rdf:resource="http://schema.org/Product"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
+        <OntoGames_Ontology:DLCOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <OntoGames_Ontology:madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Kunos_Simulazioni"/>
+        <rdfs:comment xml:lang="en">DLC from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Intercontinental GT Pack</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1662,6 +1852,18 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
         <OntoGames_Ontology:name xml:lang="it">Irene</OntoGames_Ontology:name>
         <rdfs:comment xml:lang="en">Character from Martha is Dead</rdfs:comment>
         <rdfs:label xml:lang="en">Irene</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Kunos_Simulazioni -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Kunos_Simulazioni">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Studio"/>
+        <OntoGames_Ontology:makes rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <OntoGames_Ontology:makes rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Intercontinental_GT_Pack"/>
+        <rdfs:comment xml:lang="en">VideoGame Studio</rdfs:comment>
+        <rdfs:label xml:lang="en">Kunos Simulazioni</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1690,6 +1892,18 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
         <OntoGames_Ontology:name xml:lang="it">LKA</OntoGames_Ontology:name>
         <rdfs:comment xml:lang="en">Studio, creators of Martha is Dead</rdfs:comment>
         <rdfs:label xml:lang="en">LKA</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lamborghini_Huracan_Evo_II_GT3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lamborghini_Huracan_Evo_II_GT3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">GT3 car from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Lamborghini Huracan Evo II GT3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1747,11 +1961,11 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/MarthaIsDead">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Female_Protagonist_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <OntoGames_Ontology:hasCharacter rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Giulia"/>
@@ -1763,6 +1977,29 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
         <OntoGames_Ontology:name xml:lang="en">Martha is Dead</OntoGames_Ontology:name>
         <rdfs:comment xml:lang="en">Game from LKA</rdfs:comment>
         <rdfs:label xml:lang="en">MarthaIsDead</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Merc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Merc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague"/>
+        <rdfs:comment xml:lang="en">Car from Rocket League</rdfs:comment>
+        <rdfs:label xml:lang="en">Merc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Monza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Monza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">Track from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Autodromo Internazionale di Monza</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1794,17 +2031,29 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/PhantomLiberty -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/PhantomLiberty">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <OntoGames_Ontology:DLCOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk"/>
         <OntoGames_Ontology:madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED"/>
         <OntoGames_Ontology:name xml:lang="en">Phantom Liberty</OntoGames_Ontology:name>
         <OntoGames_Ontology:name xml:lang="it">Phantom Liberty</OntoGames_Ontology:name>
         <rdfs:comment xml:lang="en">DLC of Cyberpunk</rdfs:comment>
         <rdfs:label xml:lang="en">PhantomLiberty</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Porsche_992_GT3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Porsche_992_GT3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Asset"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Car"/>
+        <OntoGames_Ontology:isAssetOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">GT3 car from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Porsche 992 GT3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1861,6 +2110,7 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
         <OntoGames_Ontology:usesWeapon rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/KusanagiNoTsurugi"/>
         <OntoGames_Ontology:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</OntoGames_Ontology:age>
         <OntoGames_Ontology:class>God</OntoGames_Ontology:class>
+        <OntoGames_Ontology:name xml:lang="en">Raiden</OntoGames_Ontology:name>
         <OntoGames_Ontology:name xml:lang="en">Raiden Shogun</OntoGames_Ontology:name>
         <OntoGames_Ontology:name xml:lang="it">Raiden Shogun</OntoGames_Ontology:name>
         <rdfs:comment xml:lang="en">character/card from genshin Impact</rdfs:comment>
@@ -1887,11 +2137,11 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RLSaga"/>
         <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RLSaga"/>
@@ -1902,6 +2152,10 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
         <sequence:follows rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SuperSonicAcrobaticRocketPoweredBattleCars"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketRacing"/>
         <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aquadome"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/BeckwithPark"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/ChampionsField"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DFHStadium"/>
+        <OntoGames_Ontology:hasMap rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DeadeyeCanyon"/>
         <OntoGames_Ontology:madeBy rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix"/>
         <OntoGames_Ontology:name xml:lang="en">Rocket League</OntoGames_Ontology:name>
         <OntoGames_Ontology:name xml:lang="it">Rocket League</OntoGames_Ontology:name>
@@ -1914,11 +2168,11 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketRacing -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketRacing">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RLSaga"/>
         <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RLSaga"/>
@@ -1971,14 +2225,25 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Silverstone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Silverstone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">Track from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Silverstone</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SuperSonicAcrobaticRocketPoweredBattleCars -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SuperSonicAcrobaticRocketPoweredBattleCars">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
         <rdf:type rdf:resource="http://schema.org/Product"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Competitive_Game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software"/>
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Game"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RLSaga"/>
         <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RLSaga"/>
@@ -2045,6 +2310,17 @@ They might share the universe, the topic, the producer, ...</rdfs:comment>
         <OntoGames_Ontology:name xml:lang="it">V</OntoGames_Ontology:name>
         <rdfs:comment xml:lang="en">Character from Cyberpunk</rdfs:comment>
         <rdfs:label xml:lang="en">V</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Watkins_Glen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Watkins_Glen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Map"/>
+        <OntoGames_Ontology:isMapOf rdf:resource="http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione"/>
+        <rdfs:comment xml:lang="en">Track from ACC</rdfs:comment>
+        <rdfs:label xml:lang="en">Watkins Glen</rdfs:label>
     </owl:NamedIndividual>
     
 

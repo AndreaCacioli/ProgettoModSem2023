@@ -232,7 +232,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/madeBy
 :madeBy rdf:type owl:ObjectProperty ;
         owl:inverseOf :makes ;
-        rdfs:domain <http://dbpedia.org/ontology/Software> ;
+        rdfs:domain :Software ;
         rdfs:range :Studio ;
         rdfs:comment "relation from a software to a studio"@en ;
         rdfs:label "madeBy"@en .
@@ -241,7 +241,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/makes
 :makes rdf:type owl:ObjectProperty ;
        rdfs:domain :Studio ;
-       rdfs:range <http://dbpedia.org/ontology/Software> ;
+       rdfs:range :Software ;
        rdfs:comment "relation from a studio to a software"@en ;
        rdfs:label "makes"@en .
 
@@ -351,7 +351,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 :name rdf:type owl:DatatypeProperty ;
       rdfs:domain owl:Thing ;
       rdfs:range rdfs:Literal ;
-      rdfs:comment "The main way something is referred to"@en ;
+      rdfs:comment "The name of something (note that something might have multiple names)"@en ;
       rdfs:label "name"@en .
 
 
@@ -366,12 +366,6 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 #################################################################
 #    Classes
 #################################################################
-
-###  http://dbpedia.org/ontology/Software
-<http://dbpedia.org/ontology/Software> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://schema.org/Product> ;
-                                       rdfs:comment "Superclass of VideoGame"@en .
-
 
 ###  http://schema.org/Product
 <http://schema.org/Product> rdf:type owl:Class ;
@@ -453,7 +447,7 @@ owl:equivalentClass rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DLC
 :DLC rdf:type owl:Class ;
-     rdfs:subClassOf <http://dbpedia.org/ontology/Software> ;
+     rdfs:subClassOf :Software ;
      rdfs:comment "Downloadable Content for a videogame. It generally is an expansion to the base version of the Game"@en ;
      rdfs:label "DLC"@en .
 
@@ -566,6 +560,13 @@ They might share the universe, the topic, the producer, ..."""@en ;
       rdfs:label "Saga"@en .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Software
+:Software rdf:type owl:Class ;
+          rdfs:subClassOf <http://schema.org/Product> ;
+          rdfs:comment "Superclass of VideoGame"@en ;
+          owl:equivalentClass "http://dbpedia.org/ontology/Software" .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Story_Game
 :Story_Game rdf:type owl:Class ;
             rdfs:subClassOf <http://www.wikidata.org/entity/Game> ;
@@ -595,7 +596,7 @@ They might share the universe, the topic, the producer, ..."""@en ;
 
 ###  http://www.wikidata.org/entity/Game
 <http://www.wikidata.org/entity/Game> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://dbpedia.org/ontology/Software> ;
+                                      rdfs:subClassOf :Software ;
                                       rdfs:comment "Some sort of videogame"@en ;
                                       rdfs:label "Game"@en ;
                                       owl:equivalentClass "https://www.wikidata.org/wiki/Q7889" .
@@ -886,6 +887,7 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Intercontinental_GT_Pack rdf:type owl:NamedIndividual ,
                                    :DLC ;
                           :DLCOf :AssettoCorsaCompetizione ;
+                          :madeBy :Kunos_Simulazioni ;
                           rdfs:comment "DLC from ACC"@en ;
                           rdfs:label "Intercontinental GT Pack"@en .
 
@@ -907,7 +909,7 @@ They might share the universe, the topic, the producer, ..."""@en ;
 :Kunos_Simulazioni rdf:type owl:NamedIndividual ,
                             :Studio ;
                    rdfs:comment "VideoGame Studio"@en ;
-                   rdfs:label "Kunos Simulazionii"@en .
+                   rdfs:label "Kunos Simulazioni"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/KusanagiNoTsurugi
@@ -1056,7 +1058,8 @@ They might share the universe, the topic, the producer, ..."""@en ;
         :usesWeapon :KusanagiNoTsurugi ;
         :age 3000 ;
         :class "God" ;
-        :name "Raiden Shogun"@en ,
+        :name "Raiden"@en ,
+              "Raiden Shogun"@en ,
               "Raiden Shogun"@it ;
         rdfs:comment "character/card from genshin Impact"@en ;
         rdfs:label "Raiden"@en .
