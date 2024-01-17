@@ -621,6 +621,64 @@ They might share the universe, the topic, the producer, ..."""@en ;
           rdfs:label "Aquadome"@en .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/AssettoCorsaCompetizione
+:AssettoCorsaCompetizione rdf:type owl:NamedIndividual ,
+                                   <http://www.wikidata.org/entity/Game> ;
+                          :madeBy :Kunos_Simulazioni ;
+                          rdfs:comment "Simulative racing Game, also known as ACC"@en ;
+                          rdfs:label "Assetto Corsa Competizione"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Aston_Martin_GT3
+:Aston_Martin_GT3 rdf:type owl:NamedIndividual ,
+                           :Car ;
+                  :isAssetOf :AssettoCorsaCompetizione ;
+                  rdfs:comment "GT3 car from ACC"@en ;
+                  rdfs:label "Aston Martin Vantage GT3"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Audi_GT3
+:Audi_GT3 rdf:type owl:NamedIndividual ,
+                   :Car ;
+          :isAssetOf :AssettoCorsaCompetizione ;
+          rdfs:comment "GT3 car from ACC" ;
+          rdfs:label "Audi R8 evo II GT3"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/BMW_M4_GT3
+:BMW_M4_GT3 rdf:type owl:NamedIndividual ,
+                     :Car ;
+            :isAssetOf :AssettoCorsaCompetizione ;
+            rdfs:comment "GT3 car from Assetto Corsa Competizione"@en ;
+            rdfs:label "BMW M4 GT3"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Barcellona
+:Barcellona rdf:type owl:NamedIndividual ,
+                     :Map ;
+            :isMapOf :AssettoCorsaCompetizione ;
+            rdfs:comment "Track from ACC"@en ;
+            rdfs:label "Barcellona"@it ,
+                       "Barcelona"@en ,
+                       "Barcelona"@es .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/BeckwithPark
+:BeckwithPark rdf:type owl:NamedIndividual ,
+                       :Map ;
+              :isMapOf :RocketLeague ;
+              rdfs:comment "Arena from Rocket League"@en ;
+              rdfs:label "BeckwithPark"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Breakout
+:Breakout rdf:type owl:NamedIndividual ,
+                   :Car ;
+          :isAssetOf :RocketLeague ;
+          rdfs:comment "Car from Rocket League"@en ;
+          rdfs:label "Breakout"@en .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/CDProjektRED
 :CDProjektRED rdf:type owl:NamedIndividual ,
                        :Studio ;
@@ -628,6 +686,14 @@ They might share the universe, the topic, the producer, ..."""@en ;
                     "CDProjectRed"@it ;
               rdfs:comment "Studio based in Poland"@en ;
               rdfs:label "CDProjectRED"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/ChampionsField
+:ChampionsField rdf:type owl:NamedIndividual ,
+                         :Map ;
+                :isMapOf :RocketLeague ;
+                rdfs:comment "Arena from Rocket League"@en ;
+                rdfs:label "ChampionsField"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Cyberpunk
@@ -639,6 +705,22 @@ They might share the universe, the topic, the producer, ..."""@en ;
                  "Cyberpunk"@it ;
            rdfs:comment "Videogame created by CDPRED"@en ;
            rdfs:label "Cyberpunk"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DFHStadium
+:DFHStadium rdf:type owl:NamedIndividual ,
+                     :Map ;
+            :isMapOf :RocketLeague ;
+            rdfs:comment "Arena from Rocket League"@en ;
+            rdfs:label "DFHStadium"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/DeadeyeCanyon
+:DeadeyeCanyon rdf:type owl:NamedIndividual ,
+                        :Map ;
+               :isMapOf :RocketLeague ;
+               rdfs:comment "Arena from Rocket League"@en ;
+               rdfs:label "DeadeyeCanyon"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Dominus
@@ -731,6 +813,14 @@ They might share the universe, the topic, the producer, ..."""@en ;
         rdfs:label "Female"@en .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Ferrari_GT3
+:Ferrari_GT3 rdf:type owl:NamedIndividual ,
+                      :Car ;
+             :isAssetOf :AssettoCorsaCompetizione ;
+             rdfs:comment "GT3 car from ACC"@en ;
+             rdfs:label "Ferrari 296 GT3"@en .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Genshin
 :Genshin rdf:type owl:NamedIndividual ,
                   :Story_Game ;
@@ -759,6 +849,22 @@ They might share the universe, the topic, the producer, ..."""@en ;
         rdfs:label "Giulia"@en .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Gizmo
+:Gizmo rdf:type owl:NamedIndividual ,
+                :Car ;
+       :isAssetOf :RocketLeague ;
+       rdfs:comment "Car from Rocket League"@en ;
+       rdfs:label "Gizmo"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hotshot
+:Hotshot rdf:type owl:NamedIndividual ,
+                  :Car ;
+         :isAssetOf :RocketLeague ;
+         rdfs:comment "Car from Rocket League"@en ;
+         rdfs:label "Hotshot"@en .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Hoyoverse
 :Hoyoverse rdf:type owl:NamedIndividual ,
                     :Studio ;
@@ -766,6 +872,22 @@ They might share the universe, the topic, the producer, ..."""@en ;
                  "Hoyoverse"@it ;
            rdfs:comment "Studio, creators of Genshin impact"@en ;
            rdfs:label "Hoyoverse"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Imola
+:Imola rdf:type owl:NamedIndividual ,
+                :Map ;
+       :isMapOf :AssettoCorsaCompetizione ;
+       rdfs:comment "Track from ACC"@en ;
+       rdfs:label "Autodromo Internazionale di Imola"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Intercontinental_GT_Pack
+:Intercontinental_GT_Pack rdf:type owl:NamedIndividual ,
+                                   :DLC ;
+                          :DLCOf :AssettoCorsaCompetizione ;
+                          rdfs:comment "DLC from ACC"@en ;
+                          rdfs:label "Intercontinental GT Pack"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Irene
@@ -779,6 +901,13 @@ They might share the universe, the topic, the producer, ..."""@en ;
              "Irene"@it ;
        rdfs:comment "Character from Martha is Dead"@en ;
        rdfs:label "Irene"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Kunos_Simulazioni
+:Kunos_Simulazioni rdf:type owl:NamedIndividual ,
+                            :Studio ;
+                   rdfs:comment "VideoGame Studio"@en ;
+                   rdfs:label "Kunos Simulazionii"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/KusanagiNoTsurugi
@@ -798,6 +927,14 @@ They might share the universe, the topic, the producer, ..."""@en ;
            "LKA"@it ;
      rdfs:comment "Studio, creators of Martha is Dead"@en ;
      rdfs:label "LKA"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lamborghini_Huracan_Evo_II_GT3
+:Lamborghini_Huracan_Evo_II_GT3 rdf:type owl:NamedIndividual ,
+                                         :Car ;
+                                :isAssetOf :AssettoCorsaCompetizione ;
+                                rdfs:comment "GT3 car from ACC"@en ;
+                                rdfs:label "Lamborghini Huracan Evo II GT3"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Lapo
@@ -841,6 +978,22 @@ They might share the universe, the topic, the producer, ..."""@en ;
               rdfs:label "MarthaIsDead"@en .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Merc
+:Merc rdf:type owl:NamedIndividual ,
+               :Car ;
+      :isAssetOf :RocketLeague ;
+      rdfs:comment "Car from Rocket League"@en ;
+      rdfs:label "Merc"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Monza
+:Monza rdf:type owl:NamedIndividual ,
+                :Map ;
+       :isMapOf :AssettoCorsaCompetizione ;
+       rdfs:comment "Track from ACC"@en ;
+       rdfs:label "Autodromo Internazionale di Monza"@en .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/NotSpecified
 :NotSpecified rdf:type owl:NamedIndividual ;
               rdfs:comment "Gender type"@en ;
@@ -865,6 +1018,14 @@ They might share the universe, the topic, the producer, ..."""@en ;
                       "Phantom Liberty"@it ;
                 rdfs:comment "DLC of Cyberpunk"@en ;
                 rdfs:label "PhantomLiberty"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Porsche_992_GT3
+:Porsche_992_GT3 rdf:type owl:NamedIndividual ,
+                          :Car ;
+                 :isAssetOf :AssettoCorsaCompetizione ;
+                 rdfs:comment "GT3 car from ACC"@en ;
+                 rdfs:label "Porsche 992 GT3"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Psyonix
@@ -912,6 +1073,10 @@ They might share the universe, the topic, the producer, ..."""@en ;
             rdfs:label "RaidenCard"@en .
 
 
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RoadHog
+:RoadHog rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/RocketLeague
 :RocketLeague rdf:type owl:NamedIndividual ,
                        :Competitive_Game ;
@@ -955,6 +1120,14 @@ They might share the universe, the topic, the producer, ..."""@en ;
              rdfs:comment "Lady's card"@en ;
              rdfs:label "LadyCard"@en ,
                         "SignoraCard"@it .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Silverstone
+:Silverstone rdf:type owl:NamedIndividual ,
+                      :Map ;
+             :isMapOf :AssettoCorsaCompetizione ;
+             rdfs:comment "Track from ACC"@en ;
+             rdfs:label "Silverstone"@en .
 
 
 ###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/SuperSonicAcrobaticRocketPoweredBattleCars
@@ -1002,6 +1175,14 @@ They might share the universe, the topic, the producer, ..."""@en ;
          "V"@it ;
    rdfs:comment "Character from Cyberpunk"@en ;
    rdfs:label "V"@en .
+
+
+###  http://www.semanticweb.org/cava/ontologies/2023/11/OntoGames_Ontology/Watkins_Glen
+:Watkins_Glen rdf:type owl:NamedIndividual ,
+                       :Map ;
+              :isMapOf :AssettoCorsaCompetizione ;
+              rdfs:comment "Track from ACC"@en ;
+              rdfs:label "Watkins Glen"@en .
 
 
 #################################################################
