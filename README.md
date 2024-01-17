@@ -1,7 +1,5 @@
 # ProgettoModSem2023
 
-[toc]
-
 ![OOPS Pitfall Free certificate](oops_free.png)
 
 Questa repo contiene l'ontologia OntoGames relativa al mondo dei videogiochi.
@@ -31,6 +29,8 @@ Per popolare l'ontologia con una A-Box reale sono state usate diverse fonti:
 - Wikidata
 - Fandom Wiki
 - Steam DB
+- rlstats.net
+- Sito ufficiale Assetto Corsa Competizione
 
 ---
 
@@ -51,6 +51,9 @@ Il dominio videoludico é un dominio vastissimo, per cui permette di avere numer
 Esistono inoltre giochi che non hanno la mira di racconatare una storia, invece sono pensati per mettere alla prova il talento dei giocatori e per permettere ad essi di sfidarsi in competizioni.
 
 Inoltre la "fanbase" di un videogioco potrebbe interessarsi ai cosí detti spin-off: una apparizione di un personaggio di un videogioco anche in altri videogiochi. Ció é importante che sia rappresentato nella nostra ontologia.
+
+Abbiamo trovato una sola altra ontologia riguardante il dominio dei videogiochi: [videogame ontology](http://vocab.linkeddata.es/vgo/).
+Sebbene sia un'ottima risorsa, tale ontologia non si pone lo stesso nostro obiettivo, invece rappresenta principalmente il concetto di evento di gioco: ovvero l'azione di un giocatore che gli fa ottenere un risultato, ad esempio achievements o acquisti di gioco.
 
 ## Competency Questions
 
@@ -92,6 +95,17 @@ Per questo progetto ci siamo posti il problema di rappresentare il videogioco pa
     Qui di seguito una foto della pagina del videogioco "Martha is Dead" nella sezione categorie.
 
     ![Pagina del videogioco "Martha is Dead" nella sezione categorie](./Images/MarthaIsDeadSteam_categories.png)
+
+- **rlStats**
+    rlStats é un sito web in cui si possono trovare informazioni interessanti sul gioco "Rocket League" relative alle mappe ed agli asset di gioco. Lo abbiamo utilizzato per trovare l'elenco delle vetture disponibili sul gioco e per l'elenco di mappe disponibili sul gioco.
+
+    ![Pagina RLStats relativa alle mappe di gioco](./Images/rlStats.png)
+
+- **Sito ufficiale di Assetto Corsa Competizione**
+
+    [https://assettocorsa.gg/assetto-corsa-competizione/](https://assettocorsa.gg/assetto-corsa-competizione/)
+
+    Abbiamo utilizzato il sito ufficiale di Assetto Corsa Competizione per trovare informazioni relative a tale gioco come i nomi delle vetture ed delle mappe di gioco.
 
 Per essere in linea con le ontologie giá esistenti, abbiamo utilizzato:
 
